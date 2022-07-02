@@ -1,0 +1,76 @@
+.logo-image {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+.logo-image2 {
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  margin-top: -6px;
+}
+#job {
+  text-align: center;
+  color: black;
+  text-decoration: 2px solid underline;
+}
+.stick {
+  position: sticky;
+  top: 8rem;
+}
+.icon {
+  position: relative;
+  top: 7px;
+}
+.location {
+  font-size: 15px;
+}
+.pill {
+  background-color: #f8f8f8;
+  border: none;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.button_container2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+input[type="range"]::-webkit-slider-thumb {
+  background: turquoise;
+}
+a:link {
+  text-decoration: none;
+  font-weight: 500;
+}
+.color {
+  color: turquoise;
+}
+@media (max-width: 768px) {
+  .hide {
+    display: none;
+  }
+}

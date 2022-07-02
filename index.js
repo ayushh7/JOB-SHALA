@@ -35,9 +35,9 @@ const PORT = process.env.PORT;
 app.get('/',(req,res)=>{
     res.render("login");
 })
-
-
-
+app.get('/jobs',(req,res)=>{
+    res.render('jobs')
+})
 mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser : true, useUnifiedTOpology : true})
 .then(() => app.listen(PORT,() => {console.log(`server is running on : ${PORT}`)}) )
 .catch((err)=>{console.log(err.message)} );
