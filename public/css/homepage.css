@@ -178,6 +178,10 @@ h1 {
   text-align: center;
 } */
 
+.d-block {
+  height: 700px;
+}
+
 .aboutus {
   height: fit-content;
 }
