@@ -32,11 +32,14 @@ app.set('views', path.join(__dirname, 'views'));
 const PORT = process.env.PORT;
 
 
-app.get('/',(req,res)=>{
-    res.render("login");
+app.get('/login',(req,res)=>{
+    res.render('login');
 })
 app.get('/jobs',(req,res)=>{
     res.render('jobs')
+})
+app.get('/',(req,res)=>{
+    res.render('homepage');
 })
 mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser : true, useUnifiedTOpology : true})
 .then(() => app.listen(PORT,() => {console.log(`server is running on : ${PORT}`)}) )

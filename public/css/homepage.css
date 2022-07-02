@@ -1,0 +1,200 @@
+/* .container
+{
+  margin: 0px;
+  background-color: rgb(193, 244, 244);
+  position: fixed;
+  width: 100%;
+}
+
+.body
+{
+  margin: 0px;
+}
+
+.main-nav 
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.main-nav .logo 
+{
+  width: 110px;
+  margin-left: 1%;
+}
+
+.main-nav ul 
+{
+  display: flex;
+}
+
+.main-nav ul li 
+{
+  padding: 0 5px;
+  list-style: none;
+}
+
+.main-nav ul li a 
+{
+  color: black;
+  text-decoration: none;
+  padding-bottom: 2px;
+  padding-right: 50px;
+  font-size: 1.5rem;
+}
+
+.main-nav ul li a:hover 
+{
+  color: red;
+} */
+
+@import url(https://fonts.googleapis.com/css?family=Istok+Web);
+@keyframes slidy {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 0%;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.logo-image {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+
+body,
+figure {
+  margin: 0;
+  font-family: Istok Web, sans-serif;
+  font-weight: 100;
+}
+div#captioned-gallery {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* figure.slider { 
+  position: relative; width: 500%;
+  font-size: 0; animation: 10s slidy infinite;
+}
+figure.slider figure { 
+  width: 20%; height: 43.75rem;
+  display: inline-block;  position: inherit; 
+}
+figure.slider img { width: 80%; height: 43.75rem; }
+figure.slider figure figcaption { 
+  position: absolute; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff; width: 100%;
+  font-size: 2rem; padding: .6rem; 
+}
+ */
+
+/* .mb-5
+{
+  margin-bottom: 0rem!important;
+} */
+h1 {
+  margin: 0px;
+  text-align: center;
+}
+/* .image-slide
+{
+  height: 35rem;
+  margin-top: 0px;
+} */
+
+.internships {
+  margin-top: 1rem;
+  height: fit-content;
+}
+
+#internship-heading {
+  text-align: left;
+  margin-left: 80px;
+  font-size: 20px;
+}
+
+.row {
+  padding: 2rem 5rem;
+}
+/* .card
+{
+  margin: 0.5rem;
+} */
+.color {
+  color: turquoise;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 75px;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  font-size: large;
+}
+
+.icon {
+  position: relative;
+  top: 2px;
+}
+.card-img-top {
+  padding: 2rem;
+}
+
+/* .card-title
+{
+  text-align: center;
+} */
+
+.aboutus {
+  height: fit-content;
+}
+
+.aboutus-img {
+  width: 25%;
+  float: left;
+  margin: 2rem;
+}
+
+.aboutus-card-body {
+  display: inline-block;
+  width: 50%;
+  margin: 2rem;
+}
+
+.footer {
+  height: 500px;
+  background-color: rgb(62, 62, 61);
+}
