@@ -1,40 +1,19 @@
+const express=require('express');
+const app=express();
+const passport=require('passport');
+const login=require('../controller/auth.js');
 
-const express = require('express');
-const User = require('../db/User');
-const Joi = require('joi');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
-const app = express();
+const router=express.Router();
 
-const router = express.Router();
-const schema = Joi.object({
-    email : Joi.string().min(6).required().email(),
-    password : Joi.string().min(6).required()
+router.get('/login',(req,res)=>{
+    res.render('login');
 });
 
-
-router.post("/",async (req,res)=>{
-    const {error} =   schema.validate(req.body);
-    if(error)
-    {
-        return res.status(400).send(error.details[0].message);
-    }
-
-    const  user = await  User.findOne({email: req.body.email});
-    if(!user)
-    {
-        return res.status(400).send('Email or Password is wrong !!!'); 
-    }
-    
-    const passValid = await bcrypt.compare(req.body.password,user.password);
-    if(!passValid)
-     return res.status(400).send("Invalid Password !!!");
+router.post('/login',passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }),login.login)
+router.post('/register',login.register);
 
 
-     res.send("logged in !!!");
+module.exports=router;
 
-    
-});
 
-module.exports = router;
