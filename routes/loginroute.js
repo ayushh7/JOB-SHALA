@@ -2,7 +2,7 @@ const express=require('express');
 const app=express();
 const passport=require('passport');
 const login=require('../controller/auth.js');
-
+const flash = require('connect-flash');
 
 const router=express.Router();
 

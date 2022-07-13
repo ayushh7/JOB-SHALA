@@ -8,19 +8,23 @@ const passport = require('passport');
 
 require('dotenv').config();
 
+
 module.exports.login=(req, res, next) => {
 
     const curUser=req.user;
+    console.log(curUser);
     if (req.session.returnTo) {
         res.redirect(req.session.returnTo);
         return;
     }
     req.flash('success', 'Welcome Back!');
     res.redirect('/');
+
 }
 
 
-module.exports.register=async (req, res, next) => {
+module.exports.register = async (req, res, next) => {
+
     try {
         console.log(req.body);
         const user=new User(
@@ -41,18 +45,22 @@ module.exports.register=async (req, res, next) => {
                 res.redirect('/login');
             }
         });
+        
         req.flash('success', 'Successfully Registered!');
+        
         if (req.session.returnTo) {
             res.redirect(req.session.returnTo);
             return;
         }
         const curUser=regUser;
         res.redirect('/');
-    }
+    }    
     catch (err) {
         console.log(err);
         req.flash('error', err.message);
         res.redirect('/login');
     }
+
 }
+
 
