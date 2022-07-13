@@ -61,6 +61,21 @@ app.get('/', (req, res) => {
     res.render('homepage');
 });
 
+app.get('/jobform', (req, res) => {
+    res.render('jobform');
+})
+
+app.get('/employerdashboard', (req, res) => {
+    res.render('employerdashboard');
+})
+
+app.get('/studentdashboard', (req, res) => {
+    res.render('studentdashboard');
+})
+
+app.get('/jobpage', (req, res) => {
+    res.render('jobpage');
+})
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTOpology: true })
     .then(() => app.listen(PORT, () => { console.log(`server is running on : ${PORT}`) }))
