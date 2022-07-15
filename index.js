@@ -8,6 +8,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const flash = require('connect-flash');
 const loginRoute = require('./routes/loginroute');
+const jobRoute = require('./routes/jobsroute');
 const path = require('path');
 const passport = require('passport');
 const User = require('./db/User');
@@ -43,19 +44,19 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.use((req, res, next) => {
-    res.locals.success=req.flash('success');
-    res.locals.error=req.flash('error');
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
     next();
 });
 
 
 app.use('/', loginRoute);
+app.use('/jobs', jobRoute);
+
 
 const PORT = process.env.PORT;
 
-app.get('/jobs', (req, res) => {
-    res.render('jobs')
-})
+
 
 app.get('/', (req, res) => {
     res.render('homepage');
@@ -63,7 +64,7 @@ app.get('/', (req, res) => {
 
 app.get('/jobform', (req, res) => {
     res.render('jobform');
-})
+});
 
 app.get('/employerdashboard', (req, res) => {
     res.render('employerdashboard');

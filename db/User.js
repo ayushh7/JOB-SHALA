@@ -27,9 +27,9 @@ const userSchema = new mongoose.Schema({
         default : null  
     },
 
-    Employer : {
-        type : Boolean,
-        default : false
+    role : {
+        type : String,
+        default : 'User'
     }
 });
 

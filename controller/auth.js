@@ -27,6 +27,7 @@ module.exports.register = async (req, res, next) => {
 
     try {
         console.log(req.body);
+        
         const user=new User(
             {
                 email: req.body.email,
@@ -36,6 +37,7 @@ module.exports.register = async (req, res, next) => {
         );
        
        const regUser=await User.register(user, req.body.password);
+
        console.log(regUser);
 
         req.logIn(regUser, (err) => {

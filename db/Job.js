@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const User = require('./User.js');
+
 
 const jobSchema = mongoose.Schema({
     Name : {
@@ -6,12 +8,15 @@ const jobSchema = mongoose.Schema({
         required : true,
         max : 255
     },
-
-    Discriptions : {
+    // Employer : {
+    //     type : mongoose.Schema.Types.ObjectId,
+    //     ref : 'User',
+    //     required : true
+    // },
+    Descriptions : {
         type :String,
         required : false,
     },
-
     Company : {
         type : String,
         required: true,
@@ -39,6 +44,7 @@ const jobSchema = mongoose.Schema({
         required : true
     }
 });
+
 
 
 module.exports =  mongoose.model('Job',jobSchema);
