@@ -7,7 +7,12 @@ const ejsmate = require('ejs-mate');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const flash = require('connect-flash');
+
 const loginRoute = require('./routes/loginroute');
+const homeRoute = require('./routes/homeroute');
+const jobRoute = require('./routes/jobroute');
+const dashboardRoute = require('./routes/dashboardroute');
+
 const path = require('path');
 const passport = require('passport');
 const User = require('./db/User');
@@ -50,32 +55,11 @@ app.use((req, res, next) => {
 
 
 app.use('/', loginRoute);
+app.use('/', homeRoute);
+app.use('/', jobRoute);
+app.use('/', dashboardRoute);
 
 const PORT = process.env.PORT;
-
-app.get('/jobs', (req, res) => {
-    res.render('jobs')
-})
-
-app.get('/', (req, res) => {
-    res.render('homepage');
-});
-
-app.get('/jobform', (req, res) => {
-    res.render('jobform');
-})
-
-app.get('/employerdashboard', (req, res) => {
-    res.render('employerdashboard');
-})
-
-app.get('/studentdashboard', (req, res) => {
-    res.render('studentdashboard');
-})
-
-app.get('/jobpage', (req, res) => {
-    res.render('jobpage');
-})
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTOpology: true })
     .then(() => app.listen(PORT, () => { console.log(`server is running on : ${PORT}`) }))

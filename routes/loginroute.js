@@ -7,7 +7,7 @@ const flash = require('connect-flash');
 const router=express.Router();
 
 router.get('/login',(req,res)=>{
-    res.render('login');
+    res.render('users/login');
 });
 
 router.post('/login',passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }),login.login)

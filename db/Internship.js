@@ -7,7 +7,7 @@ const InternshipSchema = mongoose.Schema({
         max : 255
     },
 
-    Discriptions : {
+    Descriptions : {
         type :String,
         required : false,
     },
