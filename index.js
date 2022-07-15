@@ -9,9 +9,8 @@ const cors = require('cors');
 const flash = require('connect-flash');
 
 const loginRoute = require('./routes/loginroute');
-const jobRoute = require('./routes/jobsroute');
-const homeRoute = require('./routes/homeroute');
 const jobRoute = require('./routes/jobroute');
+const homeRoute = require('./routes/homeroute');
 const dashboardRoute = require('./routes/dashboardroute');
 
 const path = require('path');
