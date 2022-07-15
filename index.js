@@ -9,11 +9,14 @@ const cors = require('cors');
 const flash = require('connect-flash');
 
 const loginRoute = require('./routes/loginroute');
+<<<<<<< HEAD
 const jobRoute = require('./routes/jobsroute');
+=======
 const homeRoute = require('./routes/homeroute');
 const jobRoute = require('./routes/jobroute');
 const dashboardRoute = require('./routes/dashboardroute');
 
+>>>>>>> 35093e72e5185293394db753df2b940945369ed7
 const path = require('path');
 const passport = require('passport');
 const User = require('./db/User');

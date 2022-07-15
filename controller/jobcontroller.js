@@ -15,7 +15,7 @@ module.exports.createjob  = async (req,res,next) => {
             perks : req.body.perks,
             CTC : req.body.CTC, 
             Category : req.body.Category,
-            // Employer : req.user.id
+            Employer : req.user
         });
         
         const isCreated = await job.save();
