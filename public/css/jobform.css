@@ -2,13 +2,6 @@
     /* background-color: linear-gradient(to right, #845EC2,#D65DB1,#D65DB1,#FF6F91,#FF9671,#FFC75F,#F9F871) */
 /* background-image: linear-gradient(to right, #16345f, #00527b, #007190, #00909c, #3daea1);
 } */
-.logo-image {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: -6px;
-}
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   font-size: 15px;
@@ -25,15 +18,19 @@ body {
   /* background-image: url(pexels-craig-adderley-1563356.jpg); */
   /* background-image: url(red-black-brush-stroke-banner-background-perfect-canva.jpg);
     background-image: url(51363.jpg); */
-  background-image: url("/images/pexels-lumn-167699.jpg");
+  background-image: url("../images/pexels-lumn-167699.jpg");
   /* background-image: linear-gradient(to right, #16345f, #00527b, #007190, #00909c, #3daea1);  */
   /* background-color: ; */
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-/* .form-group col-lg-12 flex-column d-flex {
-  height: ;
-} */
+
+.text-start {
+  margin-left: 80px;
+}
+.text-start2 {
+  margin-left: -80px;
+}
 h2 {
   color: #000;
 

@@ -8,11 +8,6 @@ const jobSchema = mongoose.Schema({
         required : true,
         max : 255
     },
-    // Employer : {
-    //     type : mongoose.Schema.Types.ObjectId,
-    //     ref : 'User',
-    //     required : true
-    // },
     Descriptions : {
         type :String,
         required : false,
