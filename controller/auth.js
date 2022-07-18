@@ -22,7 +22,6 @@ module.exports.login=(req, res, next) => {
 
 }
 
-
 module.exports.registeremployer = async (req, res, next) => {
 
     try {
@@ -66,7 +65,6 @@ module.exports.registeremployer = async (req, res, next) => {
 }
 
 module.exports.registerstudent = async (req, res, next) => {
-
     try {
         console.log(req.body);
         
