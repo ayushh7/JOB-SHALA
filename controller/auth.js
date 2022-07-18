@@ -23,7 +23,49 @@ module.exports.login=(req, res, next) => {
 }
 
 
-module.exports.register = async (req, res, next) => {
+module.exports.registeremployer = async (req, res, next) => {
+
+    try {
+        console.log(req.body);
+        
+        const user=new User(
+            {
+                email: req.body.email,
+                FirstName: req.body.FirstName,
+                LastName: req.body.LastName,
+            }
+        );
+       
+       const regUser=await User.register(user, req.body.password);
+
+       console.log(regUser);
+
+        req.logIn(regUser, (err) => {
+            if (err) {
+                console.log(err);
+                req.flash('error', err.message);
+                res.redirect('/login');
+            }
+        });
+        
+        req.flash('success', 'Successfully Registered!');
+        
+        if (req.session.returnTo) {
+            res.redirect(req.session.returnTo);
+            return;
+        }
+        const curUser=regUser;
+        res.redirect('/');
+    }    
+    catch (err) {
+        console.log(err);
+        req.flash('error', err.message);
+        res.redirect('/login');
+    }
+
+}
+
+module.exports.registerstudent = async (req, res, next) => {
 
     try {
         console.log(req.body);

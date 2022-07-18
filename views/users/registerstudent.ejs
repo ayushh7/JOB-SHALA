@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/registerstudent.css">
+    <title>Job Shala</title>
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 mt-5 registerimage">
+                    <!-- <img src="https://images.unsplash.com/photo-1517817748493-49ec54a32465?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVnaXN0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60";
+						alt="Image" class="img-fluid"> -->
+                </div>
+
+                <div class="col-md-6 contents">
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-md-8">
+                            <div class="mb-4">
+                                <h3>Register as a student</h3>
+                            </div>
+                            <form action='/registerstudent' method="post" class="form form-signup">
+
+                                <div class="form-group first col-sm-12">
+                                    <label for="FirstName">First Name</label>
+                                    <input name="FirstName" type="text" required class="form-control" id="email">
+                                </div>
+                                <div class="form-group first">
+                                    <label for="LastName">Last Name</label>
+                                    <input name="LastName" type="text" required class="form-control" id="email">
+                                </div>
+                                <div class="form-group first">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email">
+
+                                </div>
+
+
+                                <div class="form-group last mb-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" class="form-control" id="password">
+
+                                </div>
+                                <div class="form-group first ">
+                                    <label for="collegename">College Name</label>
+                                    <input type="text" name="collegename" class="form-control" id="text">
+
+                                </div>
+                                <div class="form-group last col-sm-7">
+                                    <label for="batch">Graduation Year (Eg 2024)</label>
+                                    <input type="number" name="batch" class="form-control" id="number">
+
+                                </div>
+
+                                <div class="d-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-0"><span class="caption">Remember
+                                            me</span>
+                                        <input type="checkbox" checked="checked" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                                </div>
+
+                                <input type="submit" value="Sign Up" class="btn btn-block btn-info">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

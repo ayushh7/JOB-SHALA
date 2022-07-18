@@ -9,10 +9,16 @@ const router=express.Router();
 router.get('/login',(req,res)=>{
     res.render('users/login');
 });
+router.get('/registeremployer',(req,res)=>{
+    res.render('users/registeremployer');
+});
+router.get('/registerstudent',(req,res)=>{
+    res.render('users/registerstudent');
+});
 
 router.post('/login',passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }),login.login)
-router.post('/register',login.register);
-
+router.post('/registeremployer',login.registeremployer);
+router.post('/registerstudent',login.registerstudent);
 
 module.exports=router;
 
