@@ -3,7 +3,6 @@ const express = require('express');
 
 require('dotenv').config();
 
-
 module.exports.createjob  = async (req,res,next) => {
   
     try {
@@ -12,24 +11,30 @@ module.exports.createjob  = async (req,res,next) => {
             Descriptions : req.body.Descriptions,
             Company : req.body.Company,
             Lastdate : req.body.Lastdate,
-            perks : req.body.perks,
+            skills : req.body.skills,
             CTC : req.body.CTC, 
             Category : req.body.Category,
             Employer : req.user
         });
         
+
         const isCreated = await job.save();
+
+
         if(isCreated)
         {
            console.log(job);
         }
-        else{
+        else
+        {
             console.log('Job not Created');
         }
-        
-        
-    } catch (err) {
+    } 
+    catch (err) {
        console.log(err); 
     }
 
 }
+
+
+

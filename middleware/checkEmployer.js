@@ -1,5 +1,5 @@
 
-const checkLogin=(req, res, next) => {
+const checkEmployer=(req, res, next) => {
     if (req.isAuthenticated() && req.user.role === 'Employer') {
         return next();
     }
@@ -7,4 +7,4 @@ const checkLogin=(req, res, next) => {
     res.redirect('/');
 }
 
-module.exports=checkLogin;
+module.exports = checkEmployer;
