@@ -26,12 +26,6 @@ const jobSchema = mongoose.Schema({
         type : Date,
         required : false
     },
-    
-    perks : {
-        type : [String],
-        required : true
-    },
-
     CTC : {
         type : Number,
         required : true
