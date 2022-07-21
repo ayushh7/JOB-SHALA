@@ -32,6 +32,8 @@ module.exports.registeremployer = async (req, res, next) => {
                 email: req.body.email,
                 FirstName: req.body.FirstName,
                 LastName: req.body.LastName,
+                Company : req.body.Company,
+                role : "Employer"
             }
         );
        
@@ -47,13 +49,12 @@ module.exports.registeremployer = async (req, res, next) => {
             }
         });
         
-        req.flash('success', 'Successfully Registered!');
-        
         if (req.session.returnTo) {
             res.redirect(req.session.returnTo);
             return;
         }
         const curUser=regUser;
+        req.flash('success','Successfully Registered!');
         res.redirect('/');
     }    
     catch (err) {
@@ -73,6 +74,8 @@ module.exports.registerstudent = async (req, res, next) => {
                 email: req.body.email,
                 FirstName: req.body.FirstName,
                 LastName: req.body.LastName,
+                College : req.body.College,
+                Graduation : req.body.Graduation
             }
         );
        

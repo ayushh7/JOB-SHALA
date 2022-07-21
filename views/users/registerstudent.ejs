@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <!-- <link rel="stylesheet" href="fonts/fonts/icomoon/style.css"> -->
 
     <link rel="stylesheet" href="css/owl.carousel.min.css">
 
@@ -16,17 +16,17 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="css/registerstudent.css">
-    <title>Job Shala</title>
+    <title>Register Student</title>
 
 </head>
 
 <body>
-    <div class="content">
+    <!-- <div class="content">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-6 mt-5 registerimage">
                     <!-- <img src="https://images.unsplash.com/photo-1517817748493-49ec54a32465?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVnaXN0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60";
-						alt="Image" class="img-fluid"> -->
+						alt="Image" class="img-fluid"> 
                 </div>
 
                 <div class="col-md-6 contents">
@@ -88,7 +88,52 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <form action="/registerstudent" method="POST">
+        <div class="login-wrap">
+
+            <div class="sign-up-htm login-html tab group sign-up login-form">
+                <h3>Register as a student</h3>
+                <div class="group">
+                    <label for="FirstName" class="label">First Name</label>
+                    <input name="FirstName" type="text" required class="input" id="FirstName">
+                </div>
+                <div class="group">
+                    <label for="LastName" class="label">Last Name</label>
+                    <input name="LastName" type="text" required class="input" id="LastName">
+                </div>
+
+                <div class="group">
+                    <label for="emailstudent" class="label">Email</label>
+                    <input type="email" name="email" class="input" id="emailstudent">
+                </div>
+                <div class="group">
+                    <label for="password" class="label">Password</label>
+                    <input type="password" name="password" class="input" id="password">
+                </div>
+
+                <div class="group">
+                    <label for="CollegeName" class="label">College Name</label>
+                    <input name="College" type="text" required class="input" id="CollegeName">
+                </div>
+                <div class="group mb-4">
+                    <label for="gradyear" class="label">Graduation Year (E.g. 2024)</label>
+                    <input type="number" name="Graduation" class="input" id="gradyear">
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Sign Up">
+                </div>
+                <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span> Keep me Signed in<span><a href="#"
+                                class="forgotpass">Forgot Password</a></span></label>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
 
 
     <script src="js/jquery-3.3.1.min.js"></script>

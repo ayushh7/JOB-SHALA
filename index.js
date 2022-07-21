@@ -10,6 +10,7 @@ const flash = require('connect-flash');
 const loginRoute = require('./routes/loginroute');
 const homeRoute = require('./routes/homeroute');
 const jobRoute = require('./routes/jobroute');
+const internshipRoute = require('./routes/internshiproute');
 const dashboardRoute = require('./routes/dashboardroute');
 const path = require('path');
 const passport = require('passport');

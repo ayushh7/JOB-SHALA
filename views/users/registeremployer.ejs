@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <!-- <link rel="stylesheet" href="fonts/fonts/icomoon/style.css"> -->
 
     <link rel="stylesheet" href="css/owl.carousel.min.css">
 
@@ -17,28 +17,28 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/registeremployer.css">
 
-    <title>Job Shala</title>
+    <title>Register</title>
 </head>
 
 <body>
 
-
+    <!-- 
 
 
     <div class="content">
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-6 mt-5 registerimage">
+                <div class="col-md-3 mt-5 registerimage">
                     <!-- <img src="https://images.unsplash.com/photo-1517817748493-49ec54a32465?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVnaXN0ZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60";
-						alt="Image" class="img-fluid"> -->
-                </div>
+						alt="Image" class="img-fluid"> 
+					 </div>
 
                 <div class="col-md-6 contents">
 
                     <div class="row justify-content-center">
 
                         <div class="col-md-8">
-                            <div class="mb-4">
+                            <div class="mb-8">
                                 <h3>Register as an Employer</h3>
                             </div>
                             <form action='/registeremployer' method="post" class="form form-signup">
@@ -51,6 +51,10 @@
                                 <div class="form-group first col-sm-12">
                                     <label for="LastName">Last Name</label>
                                     <input name="LastName" type="text" required class="form-control" id="LastName">
+                                </div>
+								<div class="form-group first col-sm-12">
+                                    <label for="FirstName">Company Name</label>
+                                    <input name="CompanyName" type="text" required class="form-control" id="CompanyName">
                                 </div>
 
                                 <div class="form-group first">
@@ -76,7 +80,7 @@
                                     <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
                                 </div>
 
-                                <input type="submit" value="Sign Up" class="btn btn-block btn-info">
+                                <input type="submit" value="Sign Up" class=" signup btn btn-block btn-info">
                             </form>
                         </div>
                     </div>
@@ -85,7 +89,46 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
+    <form action="/registeremployer" method="POST">
+        <div class="login-wrap">
+
+            <div class="sign-up-htm login-html tab group sign-up login-form">
+                <h3>Register as an Employer</h3>
+                <div class="group">
+                    <label for="user" class="label">First Name</label>
+                    <input name="FirstName" type="text" required class="input" id="FirstName">
+
+                </div>
+                <div class="group">
+                    <label for="user" class="label">Last Name</label>
+                    <input name="LastName" type="text" required class="input" id="LastName">
+                </div>
+                <div class="group">
+                    <label for="user" class="label">Company Name</label>
+                    <input name="Company" type="text" required class="input" id="CompanyName">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Official Email</label>
+                    <input type="email" name="email" class="input" id="email">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input type="password" name="password" class="input" id="password">
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Sign Up">
+                </div>
+                <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span> Keep me Signed in<span><a href="#"
+                                class="forgotpass">Forgot Password</a></span></label>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
 
 
     <script src="js/jquery-3.3.1.min.js"></script>

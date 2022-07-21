@@ -17,19 +17,24 @@ const userSchema = new mongoose.Schema({
         max: 255
     },
 
-    date: {
-        type: Date,
-        default: Date.now
+    Company : {
+        type : String,
+        default : null  
     },
 
-    Company: {
-        type: String,
-        default: null
+    College : {
+        type : String,
+        default : null  
     },
 
-    role: {
-        type: String,
-        default: 'User'
+    Graduation : {
+        type : Number,
+        default : null
+    },
+
+    role : {
+        type : String,
+        default : 'User'
     }
 
 });
