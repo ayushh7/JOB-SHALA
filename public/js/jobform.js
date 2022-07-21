@@ -1,5 +1,5 @@
 const tagContainer = document.querySelector('.tag-container');
-const button = document.querySelector('.add')
+const button = document.getElementById('tagbutton')
 const input = document.querySelector('.tag-container input');
 
 let tags = [];

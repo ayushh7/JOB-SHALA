@@ -9,6 +9,10 @@ const jobSchema = mongoose.Schema({
         required : true,
         max : 255
     },
+    Location : {
+        type : String,
+        required : true
+    },
 
     Descriptions : {
         type :String,
@@ -26,9 +30,9 @@ const jobSchema = mongoose.Schema({
         type : Date,
         required : false
     },
-    
-    perks : {
-        type : [String],
+
+    Startdate :{
+        type : Date,
         required : true
     },
 
@@ -45,9 +49,11 @@ const jobSchema = mongoose.Schema({
     Employer : {
         type : mongoose.Schema.Types.ObjectId,
         ref : 'User',
+    },
+    skills : {
+        type : [String],
+        required : false
     }
-
-    
 });
 
 
