@@ -7,7 +7,6 @@ const ejsmate = require('ejs-mate');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const flash = require('connect-flash');
-
 const loginRoute = require('./routes/loginroute');
 const homeRoute = require('./routes/homeroute');
 const jobRoute = require('./routes/jobroute');
@@ -55,7 +54,7 @@ app.use((req, res, next) => {
 
 app.use('/', loginRoute);
 app.use('/', homeRoute);
-app.use('/', jobRoute);
+app.use('/jobs', jobRoute);
 app.use('/', dashboardRoute);
 
 const PORT = process.env.PORT;

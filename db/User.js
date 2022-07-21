@@ -4,36 +4,37 @@ const passport = require('passport');
 
 
 const userSchema = new mongoose.Schema({
-    
-    FirstName : {
-        type : String,
-        required : true,
-        max : 255
-   },
-   
-    LastName : {
-        type :String,
-        required : false,
-        max :255
-    },
-    
-    date : {
-        type : Date,
-        default : Date.now
+
+    FirstName: {
+        type: String,
+        required: true,
+        max: 255
     },
 
-    CompanyName : {
-        type : String,
-        default : null  
+    LastName: {
+        type: String,
+        required: false,
+        max: 255
     },
 
-    role : {
-        type : String,
-        default : 'User'
+    date: {
+        type: Date,
+        default: Date.now
+    },
+
+    Company: {
+        type: String,
+        default: null
+    },
+
+    role: {
+        type: String,
+        default: 'User'
     }
+
 });
 
-userSchema.plugin(passportLocalMongoose,{usernameField : 'email'});
+userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
-module.exports =  new mongoose.model('User',userSchema);
+module.exports = new mongoose.model('User', userSchema);
 

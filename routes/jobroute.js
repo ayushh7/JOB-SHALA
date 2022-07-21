@@ -4,23 +4,22 @@ const checkEmployer = require('../middleware/checkEmployer');
 const {createjob} = require('../controller/jobcontroller');
 const Job = require('../db/Job.js');
 
-router.get('/jobs', async (req, res) => {
+
+router.route('/').get(async (req, res) => {
     const jobs = await Job.find();
     res.render('jobs/jobs',{jobs});
 })
+.post(createjob);
 
-
-router.get('/jobform', (req, res) => {
+router.route('/new').get((req, res) => {
     res.render('jobs/jobform');
 })
 
 
-router.get('/jobpage', (req, res) => {
-    res.render('jobs/jobpage');
-})
-
-
-router.post('/jobform',checkEmployer,createjob);
+router.get('/:id', async (req, res) => {
+    const job = await Job.findById(req.params.id);
+    res.render('jobs/jobpage',{job});
+});
 
 
 module.exports=router;

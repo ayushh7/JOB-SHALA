@@ -11,7 +11,7 @@ const jobSchema = mongoose.Schema({
     },
     Location : {
         type : String,
-        required : true
+        required : false
     },
 
     Descriptions : {
@@ -21,18 +21,18 @@ const jobSchema = mongoose.Schema({
 
     Company : {
         type : String,
-        required: true,
+        required: false,
         min: 6,
         max : 255
     },
    
     Lastdate : {
-        type : Date,
+        type : String,
         required : false
     },
 
     Startdate :{
-        type : Date,
+        type : String,
         required : true
     },
 

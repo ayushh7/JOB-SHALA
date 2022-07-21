@@ -1,6 +1,8 @@
 const tagContainer = document.querySelector('.tag-container');
 const button = document.getElementById('tagbutton')
 const input = document.querySelector('.tag-container input');
+const form = document.getElementById('formID');
+const submit1 = document.getElementById('submit1');
 
 let tags = [];
 
@@ -38,6 +40,7 @@ button.addEventListener('click', (e) => {
       addTags();
       input.value = '';
 });
+
 document.addEventListener('click', (e) => {
   console.log(e.target.tagName);
   if (e.target.tagName === 'I') {
@@ -47,5 +50,13 @@ document.addEventListener('click', (e) => {
     addTags();    
   }
 })
+
+submit1.addEventListener('click',(e) => {
+    const hiddenField = document.getElementById('skills');
+      hiddenField.value = tags;
+      console.log(hiddenField);
+      document.getElementById("formID").submit();
+}
+)
 
 input.focus();
