@@ -22,9 +22,19 @@ const userSchema = new mongoose.Schema({
         default : Date.now
     },
 
-    CompanyName : {
+    Company : {
         type : String,
         default : null  
+    },
+
+    College : {
+        type : String,
+        default : null  
+    },
+
+    Graduation : {
+        type : Number,
+        default : null
     },
 
     role : {

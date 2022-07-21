@@ -11,6 +11,7 @@ const flash = require('connect-flash');
 const loginRoute = require('./routes/loginroute');
 const homeRoute = require('./routes/homeroute');
 const jobRoute = require('./routes/jobroute');
+const internshipRoute = require('./routes/internshiproute');
 const dashboardRoute = require('./routes/dashboardroute');
 const path = require('path');
 const passport = require('passport');
@@ -56,6 +57,7 @@ app.use((req, res, next) => {
 app.use('/', loginRoute);
 app.use('/', homeRoute);
 app.use('/', jobRoute);
+app.use('/', internshipRoute);
 app.use('/', dashboardRoute);
 
 const PORT = process.env.PORT;
