@@ -50,6 +50,13 @@ const jobSchema = mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId,
         ref : 'User',
     },
+
+    Applicants : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'User'
+        }
+    ],
     
     skills : {
         type : [String],

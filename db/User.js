@@ -35,7 +35,14 @@ const userSchema = new mongoose.Schema({
     role : {
         type : String,
         default : 'Student'
-    }
+    },
+
+    Applicants : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'User'
+        }
+    ],
 
 });
 

@@ -48,6 +48,18 @@ const InternshipSchema = mongoose.Schema({
         required : false
     },
 
+    Employer : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'User',
+    },
+
+    Applicants : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'User'
+        }
+    ],
+
     Descriptions : {
         type :String,
         required : false,

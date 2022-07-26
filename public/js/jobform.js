@@ -52,7 +52,7 @@ document.addEventListener('click', (e) => {
 })
 
 submit1.addEventListener('click',(e) => {
-    const hiddenField = document.getElementById('skills');
+    const hiddenField = document.getElementsByName('skills[]');
       hiddenField.value = tags;
       console.log(hiddenField);
       document.getElementById("formID").submit();
