@@ -9,9 +9,15 @@ const jobSchema = mongoose.Schema({
         required : true,
         max : 255
     },
+
+    State : {
+        type : String,
+        required : true
+    },
+    
     Location : {
         type : String,
-        required : false
+        required : true
     },
 
     Descriptions : {
@@ -21,8 +27,7 @@ const jobSchema = mongoose.Schema({
 
     Company : {
         type : String,
-        required: false,
-        min: 6,
+        required: true,
         max : 255
     },
    
@@ -40,16 +45,12 @@ const jobSchema = mongoose.Schema({
         type : Number,
         required : true
     },
-    
-    Category : {
-        type : String,
-        required : true
-    },
 
-    Employer : {
-        type : mongoose.Schema.Types.ObjectId,
-        ref : 'User',
-    },
+    // Employer : {
+    //     type : mongoose.Schema.Types.ObjectId,
+    //     ref : 'User',
+    // },
+
     skills : {
         type : [String],
         required : false
