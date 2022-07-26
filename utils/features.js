@@ -32,16 +32,6 @@ class Features {
         },
       }
       :{}
-
-
-      let CompanyName=this.queryStr.CompanyName
-        ? {
-          Company: {
-            $regex: this.queryStr.CompanyName,
-          },
-        }
-        :{}
-
       const title = this.queryStr.title
         ? {
           Name: {
@@ -50,7 +40,7 @@ class Features {
         }
         :{}
 
-        this.query=this.query.find({ $and: [{ CTC: { $gte: min } }, { ...CompanyName }, { ...Location }] });
+        this.query=this.query.find({ $and: [{ CTC: { $gte: min } }, { ...title }, { ...Location }] });
       
         return this;
     }
