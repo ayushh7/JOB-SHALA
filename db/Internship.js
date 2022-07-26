@@ -7,25 +7,29 @@ const InternshipSchema = mongoose.Schema({
         max : 255
     },
 
-    Descriptions : {
-        type :String,
-        required : false,
-    },
-
     Company : {
         type : String,
         required: true,
-        min: 6,
         max : 255
     },
 
     Lastdate : {
-        type : Date,
+        type : String,
         required : false
     },
+
+    Startdate :{
+        type : String,
+        required : true
+    },
+
+    State : {
+        type : String,
+        required : true
+    },
     
-    perks : {
-        type : [String],
+    Location : {
+        type : String,
         required : true
     },
 
@@ -33,16 +37,21 @@ const InternshipSchema = mongoose.Schema({
         type : Number,
         required : true
     },
-    
-    Category : {
-        type : String,
-        required : true
-    },
 
     Duration : {
         type : Number,
         required : true
-    }
+    },
+
+    skills : {
+        type : [String],
+        required : false
+    },
+
+    Descriptions : {
+        type :String,
+        required : false,
+    },
 });
 
 

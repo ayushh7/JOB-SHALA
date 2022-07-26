@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/employerdashboard.css">
 </head>
 
@@ -47,7 +49,10 @@
                     <img src="https://images.unsplash.com/photo-1527736947477-2790e28f3443?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHx3b21hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
                         alt="Account">
                 </div>
-                <div class="account-info-name">User Name</div>
+                <div class="account-info-name">
+                    <%=currentUser.FirstName%>
+                        <%=currentUser.LastName%>
+                </div>
                 <button class="account-info-more">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -68,9 +73,14 @@
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
           </svg>
         </button> -->
-                <form action="/jobform">
-                    <button class="app-content-headerButton">Create a new job</button>
-                </form>
+                <div class="justify">
+                    <form action="/jobs/new">
+                        <button class="app-content-headerButton ms-5 mb-2">Create a new job</button>
+                    </form>
+                    <form action="/internships/new">
+                        <button class="app-content-headerButton ms-2">Create a new internship</button>
+                    </form>
+                </div>
             </div>
             <div class="app-content-actions">
                 <input class="search-bar" placeholder="Search" type="text">

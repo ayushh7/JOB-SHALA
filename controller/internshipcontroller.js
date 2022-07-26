@@ -1,4 +1,4 @@
-const Job = require('../db/Job.js');
+const Internship = require('../db/Internship.js');
 const express = require('express');
 
 require('dotenv').config();
@@ -8,33 +8,34 @@ module.exports.createinternship  = async (req,res,next) => {
 
     
     try {
-        const job = new Job({
+        console.log(req.body);
+        const internship = new Internship({
             Name : req.body.Name,
             Descriptions : req.body.Descriptions,
-            // Company : req.user.Company,
+            Company : req.user.Company,
             Lastdate : req.body.Lastdate,
             Startdate : req.body.Startdate,
-            // skills : req.body.skills,
-            CTC : req.body.CTC, 
-            Category : req.body.Category,
+            skills : req.body.skills,
+            Stipend : req.body.Stipend, 
+            Duration : req.body.Duration,
             // Employer : req.user
+            State : req.body.State,
             Location : req.body.Location,
-            role : "internship"
         });
     
-        const isCreated = await job.save();
+        const isCreated = await internship.save();
 
         console.log(isCreated);
         
         if(isCreated)
         {
            console.log(isCreated);
-           res.redirect('/jobs');
+           res.redirect('/internships');
            req.flash('success_msg','Internship Created Successfully');
         }
         else
         {
-            console.log('Job not Created');
+            console.log('Internship not Created');
         }
     } 
     catch (err) {
