@@ -85,7 +85,6 @@
 * {
   box-sizing: border-box;
 }
-
 .logo-image {
   width: 46px;
   height: 46px;
@@ -194,6 +193,21 @@ img.w-100{
   width: 100% !important;
   height: 75vh;
 }
+<<<<<<< HEAD
+=======
+
+.jobs {
+  margin-top: 1rem;
+  height: fit-content;
+}
+
+#job-heading {
+  text-align: left;
+  margin-left: 80px;
+  font-size: 20px;
+}
+
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
 .row {
   padding: 2rem 5rem;
 }
@@ -249,6 +263,7 @@ h1,h3{
   width: 50%;
   margin: 2rem;
 }
+<<<<<<< HEAD
 @media screen and (max-width:700px){
 h1{
   margin-top:15px;
@@ -294,3 +309,16 @@ h1{
   font-weight: 600;
 }
 }
+=======
+
+a {
+  text-decoration: none;
+}
+.logo-image2 {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10

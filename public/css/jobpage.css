@@ -1,18 +1,12 @@
-.logo-image {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: -6px;
-}
-
 .heading {
   text-align: center;
   font-weight: 500;
   font-size: 30px;
   padding-bottom: 25px;
 }
-
+.hide-navigation-item {
+  display: none;
+}
 .container2 {
   margin: 20;
   padding: 10;
@@ -167,4 +161,11 @@ p {
 }
 .footer {
   background-color: rgb(62, 62, 61);
+}
+.logo-image2 {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
 }

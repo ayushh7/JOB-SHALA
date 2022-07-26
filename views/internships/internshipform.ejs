@@ -4,13 +4,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/jobform.css">
 
+
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <h2>Post a Job</h2>
+                <h2>Post an Internship</h2>
                 <div class="card">
 
-                    <form class="form-card" id='formID' action="/jobs" method='Post'>
+                    <!-- <form class="form-card" onsubmit="event.preventDefault()"> -->
+                    <form class="form-card" id='formID' action="/internships" method='Post'>
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label
@@ -24,7 +26,7 @@
 
                         <div class="row justify-content">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                    class="form-control-label px-3">Job Title</label> <input type="text" id="job"
+                                    class="form-control-label px-3">Internship Title</label> <input type="text" id="job"
                                     name="Name" placeholder=""> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label
                                     class="form-control-label px-3">Last Date to Apply</label> <input type="date"
@@ -34,7 +36,6 @@
 
                         <div class="row justify-content">
                             <div>Location</div>
-
                             <div class="form-group col-sm-6 flex-column d-flex">
 
                                 <select onchange="print_city('state', this.selectedIndex);" id="sts" name="State"
@@ -42,55 +43,31 @@
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
 
-                                <select name="Location" id="state" class="form-control" required></select>
+                                <select id="state" class="form-control" required name="Location"></select>
                                 <script language="javascript">print_state("sts");</script>
                             </div>
-<<<<<<< HEAD
-                       
-                       </div>
-                  
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> 
-                                <label class="form-control-label px-3">Start Date</label> 
-                                <input type="date" id="desc"
-                                    name="Startdate" placeholder="Select a date"> 
-                                </div>
-                               
-    
-                                <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                    class="form-control-label px-3">CTC (INR)</label> <input type="number" id="desc"
-                                    name="CTC" placeholder=""> </div>
-=======
-
->>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
                         </div>
 
                         <div class="row justify-content-between text-left">
-<<<<<<< HEAD
-                            
-    
-                    
-                            
-    
-=======
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3">Start Date</label>
                                 <input type="date" id="desc" name="Startdate" placeholder="Select a date">
                             </div>
-
-
                             <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                    class="form-control-label px-3">CTC (INR)</label> <input type="number" id="desc"
-                                    name="CTC" placeholder=""> </div>
+                                    class="form-control-label px-3">Duration</label> <input type="number" id="desc"
+                                    name="Duration" placeholder=""> </div>
+
                         </div>
 
                         <div class="row justify-content-between text-left">
 
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                    class="form-control-label px-3">Stipend(INR)</label> <input type="number" id="desc"
+                                    name="Stipend" placeholder=""> </div>
 
 
 
 
->>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
                         </div>
                         <div class="form-group flex-column d-flex text-center skillcss">
                             <label class="form-control-label px-3">Enter Skills required</label>
@@ -109,23 +86,28 @@
 
                         </div>
 
-                        <div class="row justify-content-between text-left "></div>
-                        <p>Description <span class="textarea" role="textbox" contenteditable></span></p>
-                </div>
+                        <div class="row justify-content-between text-left ">
 
-                <input type="hidden" name="skills" id="skills" value="" />
-                <div class="row justify-content-lg-center">
-                    <div class="form-group col-lg-3">
-                        <button type="button" class="btn-block btn-primary" id="submit1">Post</button>
-                    </div>
 
+                            <p>Description <span class="textarea" role="textbox" contenteditable></span></p>
+
+
+                        </div>
+
+
+                        <input type="hidden" name="skills" id="skills" value="" />
+                        <div class="row justify-content-lg-center">
+                            <div class="form-group col-lg-3">
+                                <button type="button" class="btn-block btn-primary" id="submit1">Post</button>
+                            </div>
+
+                        </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
     </div>
-    </div>
 
 
 
-    <script src="/js/internshipform.js"></script>
+    <script src="/js/jobform.js"></script>
