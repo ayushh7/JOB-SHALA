@@ -13,3 +13,6 @@ $( window ).resize(function() {
         $( '#show' ).addClass("col-5");
     }
 });
+
+
+

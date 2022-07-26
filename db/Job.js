@@ -45,12 +45,12 @@ const jobSchema = mongoose.Schema({
         type : Number,
         required : true
     },
-
-    // Employer : {
-    //     type : mongoose.Schema.Types.ObjectId,
-    //     ref : 'User',
-    // },
-
+    
+    Employer : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'User',
+    },
+    
     skills : {
         type : [String],
         required : false
@@ -58,6 +58,4 @@ const jobSchema = mongoose.Schema({
 });
 
 
-
 module.exports =  mongoose.model('Job',jobSchema);
-
