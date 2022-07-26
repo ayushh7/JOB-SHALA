@@ -19,11 +19,19 @@ body {
   /* background-image: url(pexels-craig-adderley-1563356.jpg); */
   /* background-image: url(red-black-brush-stroke-banner-background-perfect-canva.jpg);
     background-image: url(51363.jpg); */
+<<<<<<< HEAD
+    background-image: url(/images/pexels-lumn-167699.jpg);
+     /* background-image: linear-gradient(to right, #16345f, #00527b, #007190, #00909c, #3daea1);  */
+    /* background-color: ; */
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+=======
   background-image: url(/images/pexels-lumn-167699.jpg);
   /* background-image: linear-gradient(to right, #16345f, #00527b, #007190, #00909c, #3daea1);  */
   /* background-color: ; */
   background-repeat: no-repeat;
   background-size: 100% 100%;
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
 }
 
 .text-start {
@@ -41,6 +49,15 @@ h2 {
 }
 
 .card {
+<<<<<<< HEAD
+    padding: 30px 40px;
+    margin-top: 80px;
+height:80%;
+    opacity: 90%;
+    margin-bottom: 2px;
+    
+    box-shadow: 5px 16px 22px 0 rgba(0, 0, 0, 0.324)
+=======
   padding: 30px 40px;
   margin-top: 80px;
   height: 80%;
@@ -48,6 +65,7 @@ h2 {
   margin-bottom: 2px;
 
   box-shadow: 5px 16px 22px 0 rgba(0, 0, 0, 0.324);
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
 }
 
 .blue-text {
@@ -61,6 +79,15 @@ h2 {
 input,
 textarea,
 button {
+<<<<<<< HEAD
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px ;
+    font-weight: 300
+=======
   padding: 8px 15px;
   border-radius: 5px;
   margin: 5px 20px;
@@ -68,6 +95,7 @@ button {
   border: 1px solid #ccc;
   font-size: 18px;
   font-weight: 300;
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
 }
 
 input:focus,
@@ -112,6 +140,14 @@ button:focus {
   width: 100%;
   margin: 0px auto;
 }
+<<<<<<< HEAD
+
+.descriptioncss{
+  
+    resize: horizontal;
+    overflow: hidden;
+=======
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
 
 .descriptioncss {
   resize: horizontal;
@@ -177,17 +213,27 @@ button:focus {
   color: #333;
   flex: 1;
 }
+<<<<<<< HEAD
+@media  screen and (max-width:700px){
+=======
 .hide-navigation-item {
   display: none;
 }
 @media screen and (max-width: 700px) {
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
   #tagbutton {
     width: 30%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
+<<<<<<< HEAD
+  
+  
+}
+=======
 }
 .card {
   box-sizing: border-box;
 }
+>>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
