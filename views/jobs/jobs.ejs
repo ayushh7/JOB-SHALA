@@ -1,4 +1,5 @@
 <% layout('layouts/boilerplate') %>
+<script src="/js/city.js"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/jobs.css">
@@ -9,26 +10,47 @@
             <div class="card stick">
                 <div class="card-body">
                     <h5 class="card-title mb-3 text-center">Filter</h5>
-                    <form action="/jobs" method="get" id = 'myForm'>
+                    <form action="/jobs" method="get" id = 'myForm1'>
+                        <div>Location</div>
+
+                            <div class="form-group col-sm-6 flex-column d-flex">
+
+                                <select onchange="print_city('state', this.selectedIndex);" id="sts" name="State"
+                                    class="form-control" required></select>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+
+                                <select name="Location" id="state" class="form-control" required></select>
+                                <script language="javascript">print_state("sts");</script>
+                            </div>
 
                         <div class="mb-3">
-                            <label for="City" class="form-label">Location</label>
-                            <input type="text" class="form-control" id="City"
-                                placeholder="e.g. Delhi" >
+                            <input type="text" hidden class="form-control" id="City" value = "<%= query.Location %>">
+                            <input type="text" hidden name="title" value = "<%= query.title %>">
+                            <input hidden name="mi" value = "<%= query.mi %>">
                         </div>
-                       
+                        <button type="submit" class="btn btn-outline-info">Info</button>
+                    </form>  
+
+                    <form action="/jobs" method="get" id = 'myForm2'>
                         <div class="mb-3">
+                            
                             <label for="Company" class="form-label">Company Name</label>
                             <input type="text" name = "title" class="form-control" id="Company"
                                 value = "<%= query.title %>" placeholder="e.g. Amazon">
+                            <input type="text" hidden name="Location" value = "<%= query.Location %>">    
+                                <input hidden name="mi" value = "<%= query.mi %>">
                         </div>
-                      
-
+                        <button type="submit" class="btn btn-outline-info">Info</button>
+                    </form>  
+                    <form action="/jobs" method="get" id = 'myForm2'>
                         <label for="customRange2" class="form-label">Desired minimum monthly stipend (₹)</label>
                         <input name = 'mi' type="range" id="myRange" class="form-range" min="0" max="100000" id="customRange2"  step = 1000 value = '<%= query.mi %>'> 
                         <div id = "demo" >  
                         </div> 
-                
+                        <input type="text" hidden name = "title" class="form-control" id="Company"
+                        value = "<%= query.title %>" placeholder="e.g. Amazon">
+                    <input type="text" hidden name="Location" value = "<%= query.Location %>">    
                         <button type="submit" class="btn btn-outline-info">Info</button>
                     </form>
                     
