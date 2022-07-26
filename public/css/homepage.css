@@ -93,12 +93,21 @@
   overflow: hidden;
   margin-top: -6px;
 }
-
+img{
+  /* background-size:cover;  */
+  /* object-fit: fill; */
+  /* height:200px;
+  width:400px; */
+  /* object-fit: cover; */
+  object-fit: cover;
+}
 body,
 figure {
+
+ 
   margin: 0;
   font-family: Istok Web, sans-serif;
-  font-weight: 100;
+  
 }
 div#captioned-gallery {
   width: 100%;
@@ -129,34 +138,77 @@ figure.slider figure figcaption {
 h1 {
   margin: 0px;
   text-align: center;
+  font-weight: 500;
 }
 /* .image-slide
 {
   height: 35rem;
   margin-top: 0px;
 } */
+a {
+  text-decoration: none;
+  color: black;
+}
 
 .internships {
   margin-top: 1rem;
   height: fit-content;
+}
+/* .carousel-inner{
+  width: 80%;
+  display: flex;
+  position: relative;
+} */
+
+img.w-100{
+  object-fit: cover;
+  padding: 0px;
+  height:312px;
+}
+
+
+.carousel-item{
+  margin-top:20px;
+  border: 3px solid #030303d0;
+  /* box-shadow:  20px 14px #434548; */
+  box-sizing: border-box;
+  /* border-radius: 14px; */
+  margin-left:45px;
+  align-items: center;
+  width: 92%;
+  height: 20rem;
+  margin-bottom: 40px;
+
+}
+.carousel-inner > .item {
+  height: 400px;
 }
 
 #internship-heading {
   text-align: left;
   margin-left: 80px;
   font-size: 20px;
+  font-weight: 600;
 }
-
+.w-100 {
+  width: 100% !important;
+  height: 75vh;
+}
 .row {
   padding: 2rem 5rem;
 }
-/* .card
+.card:hover
 {
-  margin: 0.5rem;
-} */
+  /* border: 1px solid black; */
+  box-shadow: 3px 3px 6px 6px #3569ad;
+}
+h1,h3{
+  font-weight: 600;
+}
 .color {
-  color: turquoise;
+  color: rgb(30, 154, 182);
   display: flex;
+  font-weight: 600;
   justify-content: flex-end;
   margin-right: 75px;
   align-items: center;
@@ -196,4 +248,49 @@ h1 {
   display: inline-block;
   width: 50%;
   margin: 2rem;
+}
+@media screen and (max-width:700px){
+h1{
+  margin-top:15px;
+}
+
+.carousel-item{
+  margin-top:20px;
+  border: 8px solid #030303d0;
+  box-shadow:  20px 14px #434548;
+  box-sizing: border-box;
+  margin-left:15px;
+  align-items: center;
+  width: 92%;
+  height: 20rem;
+  margin-bottom: 40px;
+
+}
+  .color {
+    text-align: center;
+  color: rgb(30, 154, 182);
+  margin-top: -40px;
+  margin-bottom:20px;
+  display: flex;
+  font-weight: 600;
+  justify-content: flex-end;
+  margin-right: 105px;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  font-size: large;
+}
+.icon {
+  position: relative;
+  top: -0.4px;
+}
+#internship-heading {
+  text-align: centre;
+
+  margin-left: 130px;
+  margin-top: 20px;
+  margin-bottom:-20px;
+  font-size: 20px;
+  font-weight: 600;
+}
 }

@@ -16,7 +16,7 @@ url('https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css');
     /* background-image: url(pexels-craig-adderley-1563356.jpg); */
     /* background-image: url(red-black-brush-stroke-banner-background-perfect-canva.jpg);
     background-image: url(51363.jpg); */
-    background-image: url(pexels-lumn-167699.jpg);
+    background-image: url(/images/pexels-lumn-167699.jpg);
      /* background-image: linear-gradient(to right, #16345f, #00527b, #007190, #00909c, #3daea1);  */
     /* background-color: ; */
     background-repeat: no-repeat;
@@ -39,11 +39,12 @@ h2{
 
 .card {
     padding: 30px 40px;
-    margin-top: 60px;
+    margin-top: 80px;
+height:80%;
     opacity: 90%;
-    margin-bottom: 60px;
-    border: none;
-    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+    margin-bottom: 2px;
+    
+    box-shadow: 5px 16px 22px 0 rgba(0, 0, 0, 0.324)
 }
 
 .blue-text {
@@ -59,7 +60,7 @@ textarea,
 button {
     padding: 8px 15px;
     border-radius: 5px;
-    margin: 5px 0px;
+    margin: 5px 20px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     font-size: 18px ;
@@ -108,6 +109,7 @@ margin-top:20px;
   width: 100%;
   margin: 0px auto;
 }
+
 .descriptioncss{
   
     resize: horizontal;
@@ -171,4 +173,14 @@ margin-top:20px;
   font-family: 'Rubik';
   color: #333;
   flex: 1;
+}
+@media  screen and (max-width:700px){
+  #tagbutton {
+    width: 30%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
 }
