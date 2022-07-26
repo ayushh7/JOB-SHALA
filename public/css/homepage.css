@@ -193,8 +193,6 @@ img.w-100{
   width: 100% !important;
   height: 75vh;
 }
-<<<<<<< HEAD
-=======
 
 .jobs {
   margin-top: 1rem;
@@ -207,7 +205,6 @@ img.w-100{
   font-size: 20px;
 }
 
->>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
 .row {
   padding: 2rem 5rem;
 }
@@ -263,53 +260,6 @@ h1,h3{
   width: 50%;
   margin: 2rem;
 }
-<<<<<<< HEAD
-@media screen and (max-width:700px){
-h1{
-  margin-top:15px;
-}
-
-.carousel-item{
-  margin-top:20px;
-  border: 8px solid #030303d0;
-  box-shadow:  20px 14px #434548;
-  box-sizing: border-box;
-  margin-left:15px;
-  align-items: center;
-  width: 92%;
-  height: 20rem;
-  margin-bottom: 40px;
-
-}
-  .color {
-    text-align: center;
-  color: rgb(30, 154, 182);
-  margin-top: -40px;
-  margin-bottom:20px;
-  display: flex;
-  font-weight: 600;
-  justify-content: flex-end;
-  margin-right: 105px;
-  align-items: center;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  font-size: large;
-}
-.icon {
-  position: relative;
-  top: -0.4px;
-}
-#internship-heading {
-  text-align: centre;
-
-  margin-left: 130px;
-  margin-top: 20px;
-  margin-bottom:-20px;
-  font-size: 20px;
-  font-weight: 600;
-}
-}
-=======
 
 a {
   text-decoration: none;
@@ -321,4 +271,3 @@ a {
   overflow: hidden;
   margin-top: -6px;
 }
->>>>>>> 2a8dfad7d345e4dd4461a7b596910b29adc87f10
