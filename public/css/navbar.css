@@ -5,3 +5,15 @@
   overflow: hidden;
   margin-top: -6px;
 }
+
+.logo-image2 {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+
+.fas {
+  font-size: 17.5px;
+}

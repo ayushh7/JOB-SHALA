@@ -2,7 +2,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/jobs.css">
-    <h2 class="mt-5 mb-4" id="job">Job Opportunities </h2>
+    <h2 class="mt-5 mb-4" id="job">Job Opportunities</h2>
     <div class="row">
         <div class="col-2 hide"></div>
         <div class="col-3 hide">
@@ -37,36 +37,50 @@
         </div>
 
         <div class="col-5" id="show">
-            <% for (var i = (page-1)*4;i< Math.min(page*4,jobs.length);i++) {%>
+            <% for (var i = (page-1)*4;i < Math.min(page*4,jobs.length);i++) {%>
                 
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="button_container">
-                            <h5 class="card-title mb-3 d-inline"><%=jobs[i].Name%></h5>
+                            <h5 class="card-title mb-3 d-inline">
+                                <%=jobs[i].Name%>
+                            </h5>
                             <div class="logo-image2 d-inline">
                                 
                             </div>
                         </div>
-                        <h6 class="card-subtitle mb-4 text-muted"><%=jobs[i].Company%> </h6>
+                        <h6 class="card-subtitle mb-4 text-muted">
+                            <%=jobs[i].Company%>
+                        </h6>
                         <div class="card-text mb-3">
-                            <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i> <%=jobs[i].Location%></div>
+                            <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i>
+                                <%=jobs[i].State%>, <%=jobs[i].Location%>
+                            </div>
                         </div>
                         <div class="mb-4">
                             <div class="location text-muted mb-1">
-                                <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start Date</span>
+                                <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start
+                                    Date</span>
                                 <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> CTC</span>
-                                <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply By</span>
+                                <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply
+                                    By</span>
                             </div>
                             <div class="text-dark">
-                                <span class="ms-1 me-5"><%=jobs[i].Startdate%></span>
-                                <span class="ms-2 me-5"><%=jobs[i].CTC%></span>
-                                <span class="ms-3 me-5"><%=jobs[i].Lastdate%></span>
+                                <span class="ms-1 me-5">
+                                    <%=jobs[i].Startdate%>
+                                </span>
+                                <span class="ms-2 me-5">
+                                    <%=jobs[i].CTC%>
+                                </span>
+                                <span class="ms-3 me-5">
+                                    <%=jobs[i].Lastdate%>
+                                </span>
                             </div>
-                        </div>  
+                        </div>
                         <div class="button_container">
                             <button class="pill text-muted">Freshers Job</button>
-                            <a href="">
-                                <div class="color">View details<i class = "material-icons icon">&#xe5cc;</i></div>
+                            <a href="" class="color">
+                                View details<i class="material-icons icon">&#xe5cc;</i>
                             </a>
                         </div>
                     </div>
