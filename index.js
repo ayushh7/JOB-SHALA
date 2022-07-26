@@ -49,6 +49,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
+    res.locals.query=req.query;
+    res.locals.user=req.user;
     next();
 });
 
@@ -56,9 +58,11 @@ app.use((req, res, next) => {
 app.use('/', loginRoute);
 app.use('/', homeRoute);
 app.use('/jobs', jobRoute);
+app.use('/internships', internshipRoute);
 app.use('/', dashboardRoute);
 
 const PORT = process.env.PORT;
+
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTOpology: true })
     .then(() => app.listen(PORT, () => { console.log(`server is running on : ${PORT}`) }))

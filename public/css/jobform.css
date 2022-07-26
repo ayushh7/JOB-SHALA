@@ -1,9 +1,12 @@
 @import 
 url('https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css');
+
+
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   font-size: 15px;
 }
+
 /* input::placeholder{
     font-size:15px;
   }
@@ -23,12 +26,15 @@ url('https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css');
     background-size: 100% 100%
 }
 
+
 .text-start{
     margin-left:80px;
 }
+
 .text-start2{
     margin-left:-80px;
 }
+
 h2{
     
     color: #000;
@@ -145,6 +151,7 @@ margin-top:20px;
   padding: 6px;
   overflow-x: scroll;
 }
+
 .tag-container .tag {
   height: 30px;
   margin: 5px;
@@ -158,11 +165,13 @@ margin-top:20px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px #fff;
   cursor: default;
 }
+
 .tag i {
   font-size: 16px;
   color: #666;
   margin-left: 5px;
 }
+
 .tag-container input {
   padding: 5px;
   font-size: 16px;

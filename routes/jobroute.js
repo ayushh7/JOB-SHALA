@@ -1,15 +1,14 @@
 const express=require('express');
 const router=express.Router();
 const checkEmployer = require('../middleware/checkEmployer');
-const {createjob} = require('../controller/jobcontroller');
+const {createjob,getAllJobs} = require('../controller/jobcontroller');
 const Job = require('../db/Job.js');
 
 
-router.route('/').get(async (req, res) => {
-    const jobs = await Job.find();
-    res.render('jobs/jobs',{jobs});
-})
-.post(createjob);
+router.route('/')
+.get(getAllJobs)
+.post(createjob)
+
 
 router.route('/new').get((req, res) => {
     res.render('jobs/jobform');
