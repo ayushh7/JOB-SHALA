@@ -59,7 +59,7 @@ const jobSchema = mongoose.Schema({
     ],
     
     skills : {
-        type : [String],
+        type : String,
         required : false
     }
 });

@@ -2,7 +2,7 @@ const express=require('express');
 const router=express.Router();
 const {createinternship} = require('../controller/internshipcontroller');
 const catchAsync = require('../utils/catchAsync');
-const {isLoggedIn} = require('../middleware')
+const {isLoggedIn, validateInternship} = require('../middleware')
 const Internship = require('../db/Internship.js');
 
 
@@ -11,7 +11,7 @@ router.route('/').get(async (req, res) => {
     const internships = await Internship.find();
     res.render('internships/internships',{internships});
 })
-.post(isLoggedIn,createinternship);
+.post(isLoggedIn,validateInternship,createinternship);
 
 router.route('/new').get(isLoggedIn,(req, res) => {
     res.render('internships/internshipform');

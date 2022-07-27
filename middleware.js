@@ -13,7 +13,7 @@ module.exports.isLoggedIn = (req,res,next)=>{
 }
 
 module.exports.validateJob = (req,res,next)=>{
-    const {error} = jobSchema.validate({...req.body,...req.user});
+    const {error} = jobSchema.validate(req.body);
     if(error){
         const msg = error.details.map(el=>el.message).join(','); //Iterating over the details object of error returned by JOI
         throw new ExpressError(400,msg);

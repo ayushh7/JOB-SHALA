@@ -44,7 +44,7 @@ const InternshipSchema = mongoose.Schema({
     },
 
     skills : {
-        type : [String],
+        type : String,
         required : false
     },
 

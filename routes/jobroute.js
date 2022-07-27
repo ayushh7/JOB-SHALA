@@ -8,7 +8,7 @@ const {getAllJobs} = require('../controller/jobcontroller');
 
 router.route('/')
 .get(catchAsync(getAllJobs))
-.post(isLoggedIn,createjob);
+.post(isLoggedIn,validateJob,createjob);
 
 router.route('/new').get(isLoggedIn,(req, res) => {
     res.render('jobs/jobform');

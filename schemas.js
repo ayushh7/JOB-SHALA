@@ -28,7 +28,7 @@ module.exports.jobSchema = Joi.object({
         mob: Joi.number(),
         Lastdate: Joi.string(),
         Descriptions : Joi.string(),
-        skills: Joi.array().items(Joi.string()),
+        skills : Joi.string(),
         Name: Joi.string().required().escapeHTML(),
         State: Joi.string().required(),
         Location: Joi.string().required(),
@@ -37,6 +37,11 @@ module.exports.jobSchema = Joi.object({
 });
 
 module.exports.internshipSchema = Joi.object({
+    email: Joi.string(),
+    mob: Joi.number(),
+    Lastdate: Joi.string(),
+    Descriptions : Joi.string(),
+    skills : Joi.string(),
     Name: Joi.string().required().escapeHTML(),
     State: Joi.string().required().escapeHTML(),
     Location: Joi.string().required().escapeHTML(),

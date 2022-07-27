@@ -8,8 +8,7 @@ module.exports.createjob  = async (req,res,next) => {
   
     try {
     
-        console.log(req.body);
-
+        // console.log(req.body);
         const job = new Job({
             Name : req.body.Name,
             Descriptions : req.body.Descriptions,
