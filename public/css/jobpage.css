@@ -25,6 +25,7 @@ body{
  
 }
 
+
 .card:before{
   
   content:"";
@@ -44,7 +45,7 @@ body{
 
 
 .fonts{
-  font-size:11px;
+  font-size:14px;
 }
 
 
@@ -57,17 +58,20 @@ a:link,a:visited,a:hover,a:active {
 
 .buttons button:nth-child(1){
      border:none !important;
-     color:#010f14;
+     
+     color:#fff;
      height:40px;
-     box-shadow: 0px 3px 10px  #264552;
+     background-color:#358eab;
+     
      
 }
 
 .buttons button:nth-child(1):hover{
-     border:1px solid #228fb3 !important;
+     /* border:1px solid #228fb3 !important; */
      color:#fff;
      height:40px;
-     background-color:#52a7c4;
+     background-color:#2d7c94;
+     
 }
 
 
@@ -95,21 +99,25 @@ a:link,a:visited,a:hover,a:active {
   text-align:center;
   font-size: 14px;
 }
-@media  screen and (max-width:900px) {
+@media  screen and (max-width:1000px) {
 
   .liclass{
   margin-left: 2px;
+  max-height: 5rem;
+  max-width:25rem;
   margin-right: 2px;
+  font-size: 10px;
   box-shadow: 0px 3px 10px  #0e2832;
 }
 .card{
 
   border:none;
-
+zoom:120%;
   position:relative;
   overflow:hidden;
   border-radius:8px;
   box-shadow: 1px 5px 10px #51a5c6;
+  margin-top:auto;
   margin-bottom: auto;
  
 }

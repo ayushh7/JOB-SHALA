@@ -37,36 +37,12 @@
                                 Indian start-ups,
                                 businesses, and government agencies. </p>
                             <div>
-<<<<<<< HEAD
-                                <ul class="list-group list-group-horizontal d-flex justify-content-center" id="jobdetails" >
-                                    <li class="list-group-item liclass">Apply By: 20th July</li>
-                                    <li class="list-group-item liclass">CTC: 2500000 INR</li>
-                                    <li class="list-group-item liclass">Start Date: 8th August</li>
-                                  </ul>
-                            </div>
-                            <div class="requiredskills">Skills Required</div>
-                            </div>
-                            <div>
-                                <ul class="list-group list-group-horizontal d-flex justify-content-center"id="skills">
-                                    <li class="list-group-item liclass">.NET </li>
-                                    <li class="list-group-item liclass">ASP.NET</li>
-                                    <li class="list-group-item liclass">C++</li>
-                                    <li class="list-group-item liclass">MVC </li>
-                                  </ul>
-                                  
-                            </div>
-                            <div>Job Description</div>
-                            <div class="px-4 mt-1">
-                                <p class="fonts">
-                                    Selected intern's day-to-day responsibilities include: Discussing the project aims with the client and development team, Designing and building web applications using Laravel, Troubleshooting issues in the implementation and debugging builds
- and Working with the front-end and back-end developers on projects </p>
-=======
                                 <ul class="list-group list-group-horizontal d-flex justify-content-center"
                                     id="jobdetails">
-                                    <li class="list-group-item">Apply By: <%=job.Lastdate%>
+                                    <li class="list-group-item liclass">Apply By: <%=job.Lastdate%>
                                     </li>
-                                    <li class="list-group-item">CTC: <%=job.CTC%> INR</li>
-                                    <li class="list-group-item">Start Date: <%=job.Startdate%>
+                                    <li class="list-group-item liclass">CTC: <%=job.CTC%> INR</li>
+                                    <li class="list-group-item liclass">Start Date: <%=job.Startdate%>
                                     </li>
                                 </ul>
                             </div>
@@ -76,19 +52,21 @@
                             <ul class="list-group list-group-horizontal d-flex justify-content-center" id="skills">
                                 <% var array=job.skills.split(','); %>
                                     <% for(var i=0; i < array.length; i++){ %>
-                                        <li class="list-group-item">
+                                        <li class="list-group-item liclass">
                                             <%=array[i]%>
                                         </li>
                                         <% } %>
                             </ul>
 
                         </div>
-                        <div>Job Description</div>
+                        <div class="text-center mt-1">
+                            <h5 class="mt-0 mb-0">
+                                Job Description
+                            </h5>
                         <div class="px-4 mt-1">
                             <p class="fonts">
                                 <%=job.Descriptions%>
                             </p>
->>>>>>> ee62b0ae4175f502ccd0b640f4f9ad8c44021f1b
                             <div>
 
 
