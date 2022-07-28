@@ -1,23 +1,27 @@
-
+html{
+  padding:0; margin:0; height:100%;
+}
 
 body{
   /* background:#eee; */
   background-image: url(../images/3063545.webp);
+  padding:0; margin:0; height:100%;
   
 }
-li{
+.liclass{
   margin-left: 10px;
   margin-right: 10px;
   box-shadow: 0px 3px 10px  #0e2832;
 }
 .card{
-  zoom:95%;
+
   border:none;
 
   position:relative;
   overflow:hidden;
   border-radius:8px;
   box-shadow: 1px 5px 10px #51a5c6;
+  margin-bottom: auto;
  
 }
 
@@ -91,11 +95,22 @@ a:link,a:visited,a:hover,a:active {
   text-align:center;
   font-size: 14px;
 }
-@media  screen and (max-width:700px) {
+@media  screen and (max-width:900px) {
 
-  li{
+  .liclass{
   margin-left: 2px;
   margin-right: 2px;
   box-shadow: 0px 3px 10px  #0e2832;
+}
+.card{
+
+  border:none;
+
+  position:relative;
+  overflow:hidden;
+  border-radius:8px;
+  box-shadow: 1px 5px 10px #51a5c6;
+  margin-bottom: auto;
+ 
 }
 }
