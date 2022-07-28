@@ -70,10 +70,19 @@
                             <h5 class="card-title mb-3 d-inline">
                                 <%=internships[i].Name%>
                             </h5>
-                            <div class="logo-image2 d-inline">
-                                <!-- <img src="https://internshala.com/cached_uploads/logo%2F5e2fde967dbde1580195478.jpeg"
-                                        class="img-fluid "> -->
-                            </div>
+                            <!-- <div class="logo-image2 d-inline">
+                                 <img src="https://internshala.com/cached_uploads/logo%2F5e2fde967dbde1580195478.jpeg"
+                                        class="img-fluid ">
+                            </div> -->
+                            <% if(currentUser && internships[i].Employer &&
+                                internships[i].Employer.equals(currentUser._id)){ %>
+                                <form class="d-inline" action="/jobs/<%=internships[i]._id%>?_method=DELETE"
+                                    method="POST">
+                                    <button class="btn btn-danger">
+                                        DELETE
+                                    </button>
+                                </form>
+                                <% } %>
                         </div>
                         <h6 class="card-subtitle mb-4 text-muted">
                             <%=internships[i].Company%>
@@ -105,7 +114,7 @@
                         </div>
                         <div class="button_container">
                             <button class="pill text-muted">Freshers Job</button>
-                            <a href="" class="color">
+                            <a href="/internships/<%=internships[i]._id%>" class="color">
                                 View details<i class="material-icons icon">&#xe5cc;</i>
                             </a>
                         </div>
