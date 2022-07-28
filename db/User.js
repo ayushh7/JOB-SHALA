@@ -36,10 +36,8 @@ const userSchema = new mongoose.Schema({
         type : String,
         default : 'Student'
     }
-
 });
 
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
 module.exports = new mongoose.model('User', userSchema);
-
