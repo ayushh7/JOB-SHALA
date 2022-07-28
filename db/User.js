@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
         default : 'Student'
     },
 
-    Applicants : [
+    Applications : [
         {
             type : mongoose.Schema.Types.ObjectId,
             ref : 'User'

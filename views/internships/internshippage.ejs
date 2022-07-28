@@ -1,84 +1,98 @@
 <% layout('layouts/boilerplate') %>
     <link rel="stylesheet" href="/css/internshippage.css">
-    
 
-        <div class="container mt-5">
-    
-            <div class="row d-flex justify-content-center">
-                
-                <div class="col-md-10">
-                    
-                    <div class="card p-5 py-4">
-                        
-                        <div class="text-center">
-                            <!-- <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle"> -->
+
+    <div class="container mt-5">
+
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-md-10">
+
+                <div class="card p-5 py-4">
+
+                    <div class="text-center">
+                        <!-- <img src="https://i.imgur.com/bDLhJiP.jpg" width="100" class="rounded-circle"> -->
                         <!-- <div class="companytitle">Microsoft<span><a class="sitelink" href="https://www.microsoft.com/en-in/about/">Link</a></span></div> -->
-                        <div class="companytitle">Microsoft</div>
+                        <div class="companytitle">
+                            <%=internship.Company%>
+                        </div>
                     </div>
-                        
-                        <div class="text-center mt-1">
-                            <h5 class="mt-0 mb-0">Software Development Engineer Intern</h5>
-                            <span>Bangalore</span>
-                            
-                            <div class="px-4 mt-1">
-                                <p class="fonts">Microsoft enables digital transformation for the era of an intelligent cloud and an intelligent edge. Its
-                                    mission is to empower
-                                    every person and every organization on the planet to achieve more. Microsoft set up its India operations in
-                                    1990. Microsoft in India offers its global
-                                    cloud services from local data centers to accelerate digital transformation across Indian start-ups,
-                                    businesses, and government agencies. </p>
+
+                    <div class="text-center mt-1">
+                        <h5 class="mt-0 mb-0">
+                            <%=internship.Name%>
+                        </h5>
+                        <span>
+                            <%=internship.State%>, <%=internship.Location%>
+                        </span>
+
+                        <div class="px-4 mt-1">
+                            <p class="fonts">Microsoft enables digital transformation for the era of an intelligent
+                                cloud and an intelligent edge. Its
+                                mission is to empower
+                                every person and every organization on the planet to achieve more. Microsoft set up its
+                                India operations in
+                                1990. Microsoft in India offers its global
+                                cloud services from local data centers to accelerate digital transformation across
+                                Indian start-ups,
+                                businesses, and government agencies. </p>
                             <div>
-                                <ul class="list-group list-group-horizontal d-flex justify-content-center" id="jobdetails" >
-                                    <li class="list-group-item">Apply By: 20th July</li>
-                                    <li class="list-group-item">Stipend: 125000 INR</li>
-                                    <li class="list-group-item">Start Date: 8th August</li>
-                                    <li class="list-group-item">Duration: 8 weeks</li>
-                                  </ul>
+                                <ul class="list-group list-group-horizontal d-flex justify-content-center"
+                                    id="jobdetails">
+                                    <li class="list-group-item">Apply By: <%=internship.Lastdate%>
+                                    </li>
+                                    <li class="list-group-item">Stipend: <%=internship.Stipend%> INR</li>
+                                    <li class="list-group-item">Start Date: <%=internship.Startdate%>
+                                    </li>
+                                    <li class="list-group-item">Duration: <%=internship.Duration%> weeks</li>
+                                </ul>
                             </div>
                             <div class="requiredskills">Skills Required</div>
-                            </div>
-                            <div>
-                                <ul class="list-group list-group-horizontal d-flex justify-content-center"id="skills">
-                                    <li class="list-group-item">.NET </li>
-                                    <li class="list-group-item">ASP.NET</li>
-                                    <li class="list-group-item">C++</li>
-                                    <li class="list-group-item">MVC </li>
-                                  </ul>
-                                  
-                            </div>
-                            <div>Internship Description</div>
-                            <div class="px-4 mt-1">
-                                <p class="fonts">
-                                    Selected intern's day-to-day responsibilities include: Discussing the project aims with the client and development team, Designing and building web applications using Laravel, Troubleshooting issues in the implementation and debugging builds
- and Working with the front-end and back-end developers on projects </p>
-                            <div>
-                            
-                             
-                            
-                            <div class="buttons">
-                                
-                                <button class="btn btn-outline-primary px-4">Apply</button>
-                               
-                            </div>
-                            
-                            
                         </div>
-                        
-                       
-                        
-                        
+                        <div>
+                            <ul class="list-group list-group-horizontal d-flex justify-content-center" id="skills">
+                                <% var array=internship.skills.split(','); %>
+                                    <% for(var i=0; i < array.length; i++){ %>
+                                        <li class="list-group-item">
+                                            <%=array[i]%>
+                                        </li>
+                                        <% } %>
+                            </ul>
+
+                        </div>
+                        <div>Internship Description</div>
+                        <div class="px-4 mt-1">
+                            <p class="fonts">
+                                <%=internship.Descriptions%>
+                            </p>
+                            <div>
+
+
+
+                                <div class="buttons">
+
+                                    <button class="btn btn-outline-primary px-4">Apply</button>
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
+
+
+
+            </p>
         </div>
-
-
-
-
-        </p>
-    </div>
-    <br><br>
-    <br><br>
+        <br><br>
+        <br><br>

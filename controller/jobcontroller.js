@@ -25,6 +25,7 @@ module.exports.createjob  = async (req,res,next) => {
         });
 
         console.log(req.user);
+        job.Employer = req.user._id;
     
         const isCreated = await job.save();
 
@@ -47,6 +48,29 @@ module.exports.createjob  = async (req,res,next) => {
     }
     
 }
+
+module.exports.showJob = async(req,res)=>{
+    const {id} = req.params;
+    const job = await Job.findById(id)
+    // .populate({
+    //     path : '',
+    //     populate : {
+    //         path : 'author'
+    //     }
+    // }).populate('author');
+    if(!job){
+        req.flash('error','Cannot find that job!');
+        return res.redirect('/jobs'); //Necessary to redirect
+    }
+    res.render('jobs/jobpage',{job});
+};
+
+module.exports.deleteJob = async(req,res)=>{
+    const {id} = req.params;
+    const deletedJob = await Job.findByIdAndDelete(id);
+    req.flash('success','Successfully deleted a Job!');
+    res.redirect('/jobs');
+};
 
 
 exports.getAllJobs = (async (req, res, next) => {
