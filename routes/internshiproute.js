@@ -1,8 +1,8 @@
 const express=require('express');
 const router=express.Router();
-const {createinternship, showInternship, deleteInternship} = require('../controller/internshipcontroller');
+const {createinternship, showInternship, deleteInternship, updateInternship, renderEditForm} = require('../controller/internshipcontroller');
 const catchAsync = require('../utils/catchAsync');
-const {isLoggedIn, validateInternship} = require('../middleware')
+const {isLoggedIn, validateInternship, isInternshipOwner} = require('../middleware')
 const Internship = require('../db/Internship.js');
 
 
@@ -20,7 +20,10 @@ router.route('/new').get(isLoggedIn,(req, res) => {
 
 router.route('/:id')
     .get(catchAsync(showInternship))
+    .put(isLoggedIn, isInternshipOwner, validateInternship, catchAsync(updateInternship))
     .delete(isLoggedIn, catchAsync(deleteInternship));
+
+router.get('/:id/edit', isLoggedIn, isInternshipOwner, catchAsync(renderEditForm));
 
 
 module.exports=router;

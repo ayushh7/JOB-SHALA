@@ -1,8 +1,8 @@
 const express=require('express');
 const router=express.Router();
-const {createjob, getAllJobs, showJob, deleteJob} = require('../controller/jobcontroller');
+const {createjob, getAllJobs, showJob, deleteJob, updateJob, renderEditForm} = require('../controller/jobcontroller');
 const catchAsync = require('../utils/catchAsync');
-const {isLoggedIn, validateJob} = require('../middleware')
+const {isLoggedIn, validateJob, isJobOwner} = require('../middleware')
 const Job = require('../db/Job.js');
 
 
@@ -16,6 +16,9 @@ router.route('/new').get(isLoggedIn,(req, res) => {
 
 router.route('/:id')
     .get(catchAsync(showJob))
+    .put(isLoggedIn, isJobOwner, validateJob, catchAsync(updateJob))
     .delete(isLoggedIn, catchAsync(deleteJob));
+
+router.get('/:id/edit', isLoggedIn, isJobOwner, catchAsync(renderEditForm));
 
 module.exports=router;

@@ -37,10 +37,16 @@ const userSchema = new mongoose.Schema({
         default : 'Student'
     },
 
-    Applications : [
+    Jobapplication : [
         {
             type : mongoose.Schema.Types.ObjectId,
-            ref : 'User'
+            ref : 'Job'
+        }
+    ],
+    Internshipapplication : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'Internship'
         }
     ],
 
