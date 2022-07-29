@@ -1,12 +1,10 @@
-// const Campground = require('./models/campground');
-// const Review = require('./models/review');
+const Job = require('./db/Job');
+const Internship = require('./db/Internship');
 const ExpressError = require('./utils/ExpressError');
-// const {campgroundSchema, reviewSchema} = require('./schemas.js')
+const {jobSchema, internshipSchema} = require('./schemas.js')
 
 module.exports.isLoggedIn = (req,res,next)=>{
-    //console.log("REQ.USER...",req.user); //Already added by passport, which contains the deserialized information from the session.
     if(!req.isAuthenticated()){
-        // console.log(req.path, req.originalUrl); //req.path shows the path in which isLoggedIn was invoked, req.originalUrl shows the path where the user was trying to go
         req.session.returnTo = req.originalUrl;
         req.flash('error','You must be signed in first!');
         return res.redirect('/login')
@@ -14,44 +12,55 @@ module.exports.isLoggedIn = (req,res,next)=>{
     next();
 }
 
-// module.exports.validateCampground = (req,res,next)=>{
-//     const {error} =  campgroundSchema.validate(req.body);
-//     if(error){
-//         const msg = error.details.map(el=>el.message).join(','); //Iterating over the details object of error returned by JOI
-//         throw new ExpressError(400,msg);
-//     }
-//     else{
-//         next();
-//     }
-// }
+module.exports.validateJob = (req,res,next)=>{
+    const {error} = jobSchema.validate(req.body);
+    if(error){
+        const msg = error.details.map(el=>el.message).join(','); //Iterating over the details object of error returned by JOI
+        throw new ExpressError(400,msg);
+    }
+    else{
+        next();
+    }
+}
 
-// module.exports.isAuthor = async(req,res,next)=>{
-//     const {id} = req.params;
-//     const campground = await Campground.findById(id);
-//     if(!campground.author.equals(req.user._id)){
-//         req.flash('error','You do not have permission to do that');
-//         return res.redirect(`/campgrounds/${id}`);
-//     }
-//     next();
-// }
+module.exports.isJobOwner = async(req,res,next)=>{
+    const {id} = req.params;
+    const job = await Job.findById(id);
+    if(!job.Employer.equals(req.user._id)){
+        req.flash('error','You do not have permission to do that');
+        return res.redirect(`/jobs/${id}`);
+    }
+    next();
+}
 
-// module.exports.validateReview = (req,res,next)=>{
-//     const {error} = reviewSchema.validate(req.body);
-//     if(error){
-//         const msg = error.details.map(el=>el.message).join(','); //Iterating over the details object of error returned by JOI
-//         throw new ExpressError(400,msg);
-//     }
-//     else{
-//         next();
-//     }
-// }
+module.exports.isInternshipOwner = async(req,res,next)=>{
+    const {id} = req.params;
+    const internship = await Internship.findById(id);
+    if(!internship.Employer.equals(req.user._id)){
+        req.flash('error','You do not have permission to do that');
+        return res.redirect(`/internships/${id}`);
+    }
+    next();
+}
 
-// module.exports.isReviewAuthor = async(req,res,next)=>{
-//     const {id, reviewId} = req.params;
-//     const review = await Review.findById(reviewId);
-//     if(!review.author.equals(req.user._id)){
-//         req.flash('error','You do not have permission to do that');
-//         return res.redirect(`/campgrounds/${id}`);
-//     }
-//     next();
-// }
+
+module.exports.validateInternship = (req,res,next)=>{
+    const {error} = internshipSchema.validate(req.body);
+    if(error){
+        const msg = error.details.map(el=>el.message).join(','); //Iterating over the details object of error returned by JOI
+        throw new ExpressError(400,msg);
+    }
+    else{
+        next();
+    }
+}
+
+
+module.exports.studentvalid = (req,res,next) => {
+    if(!req.isAuthenticated() || !req.user.role !== 'student'){
+        req.flash('error','You do not have permission to do that');
+        return res.redirect('/');
+    }
+
+    next();
+}
