@@ -11,6 +11,7 @@ class Features {
         ? {
           Name: {
             $regex: this.queryStr.title,
+            $options: 'i',
           },
         }
         :{}
@@ -29,6 +30,7 @@ class Features {
       ? {
         Location: {
           $regex: this.queryStr.Location,
+          $options: 'i',
         },
       }
       :{}
@@ -36,6 +38,7 @@ class Features {
         ? {
           Name: {
             $regex: this.queryStr.title,
+            $options: 'i',
           },
         }
         :{}

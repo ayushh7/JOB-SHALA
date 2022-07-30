@@ -1,6 +1,7 @@
 const Job = require('../db/Job.js');
 const express = require('express');
 const Features = require('../utils/features');
+const User = require('../db/User.js');
 
 require('dotenv').config();
 
@@ -18,7 +19,7 @@ module.exports.createjob  = async (req,res,next) => {
             skills : req.body.skills,
             CTC : req.body.CTC, 
             Category : req.body.Category,
-            // Employer : req.user,
+            Employer : req.user,
             State : req.body.State,
             Location : req.body.Location,
             role : "job"
@@ -27,20 +28,20 @@ module.exports.createjob  = async (req,res,next) => {
         console.log(req.user);
         job.Employer = req.user._id;
     
-        const isCreated = await job.save();
-
-        console.log(isCreated);
-        res.redirect('/jobs');
-        if(isCreated)
-        {
-           console.log(isCreated);
-           res.redirect('/jobs');
-           req.flash('success_msg','Job Created Successfully');
-        }
-        else
-        {
-            console.log('Job not Created');
-        }
+        // const isCreated = await job.save();
+ 
+        console.log(job);
+        // res.redirect('/jobs');
+        // if(isCreated)
+        // {
+        //    console.log(isCreated);
+        //    res.redirect('/jobs');
+        //    req.flash('success_msg','Job Created Successfully');
+        // }
+        // else
+        // {
+        //     console.log('Job not Created');
+        // }
     } 
 
     catch (err) {
@@ -123,3 +124,31 @@ exports.getAllJobs = (async (req, res, next) => {
     res.render('jobs/jobs',{jobs,page: currentPage, mxLength: sze});
 
   })
+
+
+exports.Applyjob = async (req,res,next) =>{
+        
+        const user = await User.findById(req.user._id);
+        const Jobfind = await Job.findById(req.params.id);
+        
+        for(var i = 0; i < user.Jobapplication.length; i++)
+        {
+            if(user.Jobapplication[i]._id === req.params.id)
+            {
+                req.flash('error','You have already applied for this job');
+                return res.redirect('/jobs');
+            }
+        }
+
+        user.Jobapplication.push(Jobfind);
+        await user.save();
+        // const ok = await user.populate('Jobapplication');
+        // console.log(ok); 
+            req.flash('success','You have successfully applied for this job'); 
+            res.redirect('/jobs');
+   
+
+  
+        
+     
+}
