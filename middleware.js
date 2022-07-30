@@ -57,7 +57,7 @@ module.exports.validateInternship = (req,res,next)=>{
 
 
 module.exports.studentvalid = (req,res,next) => {
-    if(!req.isAuthenticated() || !req.user.role !== 'student'){
+    if(!req.user.role !== 'student'){
         req.flash('error','You do not have permission to do that');
         return res.redirect('/');
     }

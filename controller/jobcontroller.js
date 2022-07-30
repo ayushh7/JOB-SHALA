@@ -126,7 +126,7 @@ exports.getAllJobs = (async (req, res, next) => {
   })
 
 
-exports.Applyjob = async (req,res) =>{
+exports.Applyjob = async (req,res,next) =>{
         
         const user = await User.findById(req.user._id);
         const Jobfind = await Job.findById(req.params.id);
@@ -140,19 +140,15 @@ exports.Applyjob = async (req,res) =>{
             }
         }
 
-        // console.log(job);
+        user.Jobapplication.push(Jobfind);
+        await user.save();
+        // const ok = await user.populate('Jobapplication');
+        // console.log(ok); 
+            req.flash('success','You have successfully applied for this job'); 
+            res.redirect('/jobs');
+   
+
+  
         
-         
-            // if(ok)
-            // {
-            // console.log(user.Applications);
-            // }
-            // else{
-            //     console.log("Error");
-            // }
-
-        user.save();
-        req.flash('success','You have successfully applied for this job');
-        res.redirect('/jobs');
-
+     
 }
