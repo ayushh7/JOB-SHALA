@@ -1,57 +1,3 @@
-/* .container
-{
-  margin: 0px;
-  background-color: rgb(193, 244, 244);
-  position: fixed;
-  width: 100%;
-}
-
-.body
-{
-  margin: 0px;
-}
-
-.main-nav 
-{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 40px;
-  padding: 20px 0;
-  font-size: 13px;
-}
-
-.main-nav .logo 
-{
-  width: 110px;
-  margin-left: 1%;
-}
-
-.main-nav ul 
-{
-  display: flex;
-}
-
-.main-nav ul li 
-{
-  padding: 0 5px;
-  list-style: none;
-}
-
-.main-nav ul li a 
-{
-  color: black;
-  text-decoration: none;
-  padding-bottom: 2px;
-  padding-right: 50px;
-  font-size: 1.5rem;
-}
-
-.main-nav ul li a:hover 
-{
-  color: red;
-} */
-
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
 @keyframes slidy {
   0% {
@@ -85,6 +31,7 @@
 * {
   box-sizing: border-box;
 }
+
 .logo-image {
   width: 46px;
   height: 46px;
@@ -92,156 +39,97 @@
   overflow: hidden;
   margin-top: -6px;
 }
-img {
-  /* background-size:cover;  */
-  /* object-fit: fill; */
-  /* height:200px;
-  width:400px; */
-  /* object-fit: cover; */
+img{
   object-fit: cover;
 }
 body,
 figure {
-  margin: 0;
+
+  overflow-x: hidden;
   font-family: Istok Web, sans-serif;
-}
-div#captioned-gallery {
-  width: 100%;
-  overflow: hidden;
+  
 }
 
-/* figure.slider { 
-  position: relative; width: 500%;
-  font-size: 0; animation: 10s slidy infinite;
-}
-figure.slider figure { 
-  width: 20%; height: 43.75rem;
-  display: inline-block;  position: inherit; 
-}
-figure.slider img { width: 80%; height: 43.75rem; }
-figure.slider figure figcaption { 
-  position: absolute; bottom: 0;
-  background: rgba(0,0,0,0.4);
-  color: #fff; width: 100%;
-  font-size: 2rem; padding: .6rem; 
-}
- */
-
-/* .mb-5
-{
-  margin-bottom: 0rem!important;
-} */
 h1 {
-  margin: 0px;
+  font-family:serif;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
 }
-/* .image-slide
-{
-  height: 35rem;
-  margin-top: 0px;
-} */
+
 a {
   text-decoration: none;
   color: black;
 }
 
-.internships {
-  margin-top: 1rem;
-  height: fit-content;
-}
-/* .carousel-inner{
-  width: 80%;
-  display: flex;
-  position: relative;
-} */
-
-img.w-100 {
-  object-fit: cover;
-  padding: 0px;
-  height: 312px;
+img.w-100{
+  object-fit:fill;
+  padding-bottom: 6px;
+  height:25rem;
 }
 
-.carousel-item {
-  margin-top: 20px;
-  border: 3px solid #030303d0;
-  /* box-shadow:  20px 14px #434548; */
-  box-sizing: border-box;
-  /* border-radius: 14px; */
-  margin-left: 45px;
+.image-slide {
+  height:25rem;
   align-items: center;
-  width: 92%;
-  height: 20rem;
+  align-content: center;
+  margin: auto;
+  margin-top:20px;
   margin-bottom: 40px;
-}
-.carousel-inner > .item {
-  height: 400px;
-}
-
-#internship-heading {
-  text-align: left;
-  margin-left: 80px;
-  font-size: 20px;
-  font-weight: 600;
-}
-.w-100 {
-  width: 100% !important;
-  height: 75vh;
+  padding: 0 1.8rem;
+  width: 92%;
 }
 
-.jobs {
-  margin-top: 1rem;
+.carousel-inner {
+  height: 25rem;
+}
+
+.carousel-item{
+  border: 3px solid #030303d0;
+  box-sizing: border-box;
+  height: 25rem;
+}
+
+
+.internships {
+  margin-top: 5rem;
   height: fit-content;
 }
 
-#job-heading {
+.mb-5 {
+  margin-bottom: 1rem!important;
+}
+
+#secondary-heading {
   text-align: left;
-  margin-left: 80px;
-  font-size: 20px;
+  margin-left: 5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.color {
+  color: rgb(30, 154, 182);
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5rem;
+  font-size:1rem;
 }
 
 .row {
   padding: 2rem 5rem;
 }
-.card:hover {
-  /* border: 1px solid black; */
+
+.card:hover
+{
   box-shadow: 3px 3px 6px 6px #3569ad;
 }
-h1,
-h3 {
-  font-weight: 600;
-}
-.color {
-  color: rgb(30, 154, 182);
-  display: flex;
-  font-weight: 600;
-  justify-content: flex-end;
-  margin-right: 75px;
-  align-items: center;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  font-size: large;
-}
 
-.icon {
-  position: relative;
-  top: 2px;
-}
 .card-img-top {
   padding: 2rem;
 }
 
-/* .card-title
-{
-  text-align: center;
-} */
-
-.d-block {
-  height: 700px;
-}
-
 .aboutus {
   height: fit-content;
+  margin-top: 5rem;
 }
 
 .aboutus-img {
@@ -254,15 +142,169 @@ h3 {
   display: inline-block;
   width: 50%;
   margin: 2rem;
+  padding: 1rem;
 }
 
-a {
-  text-decoration: none;
+@media (min-width:575px) and (max-width:700px){
+
+img.w-100{
+  object-fit:fill;
+  padding-bottom: 6px;
+  height:20rem;
 }
-.logo-image2 {
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-top: -6px;
+
+.image-slide {
+  height:20rem;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  margin-top:20px;
+  margin-bottom: 40px;
+  width: 92%;
+}
+
+.carousel-inner {
+  height: 20rem;
+}
+
+.carousel-item{
+  border: 3px solid #030303d0;
+  box-sizing: border-box;
+  height: 20rem;
+}
+
+#secondary-heading {
+  text-align: left;
+  margin-left: 3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.color {
+  color: rgb(30, 154, 182);
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3rem;
+  font-size:1rem;
+}
+
+.row {
+  padding: 2rem 3rem;
+}
+
+.card-img-top {
+  padding: 1.5rem;
+}
+
+.aboutus {
+  height: fit-content;
+  margin-top: 3rem;
+}
+
+.aboutus-heading {
+  margin-bottom: 4rem;
+}
+
+.aboutus-img {
+  width: 25%;
+  float: left;
+  margin: 2rem;
+}
+
+.aboutus-card-body {
+  display: inline-block;
+  width: 50%;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+#about-us-row2 {
+  margin-top: -4rem;
+}
+
+}
+
+ @media screen and (max-width:575px) {
+
+  img.w-100{
+    object-fit:fill;
+    padding-bottom: 6px;
+    height:15rem;
+  }
+  
+  .image-slide {
+    height:15rem;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    margin-top:20px;
+    margin-bottom: 40px;
+    width: 92%;
+  }
+  
+  .carousel-inner {
+    height: 15rem;
+  }
+  
+  .carousel-item{
+    border: 3px solid #030303d0;
+    box-sizing: border-box;
+    height: 15rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  #secondary-heading {
+    text-align: center;
+    margin-left: 0rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .color {
+    color: rgb(30, 154, 182);
+    display: flex;
+    justify-content:center;
+    margin-right: 0rem;
+    font-size:1rem;
+  }
+  
+  .row {
+    padding: 2rem 3rem;
+  }
+  
+  .card-img-top {
+    padding: 3rem;
+  }
+  
+  .aboutus {
+    height: fit-content;
+    margin-top: 3rem;
+  }
+  
+  .aboutus-heading {
+    margin-bottom: 4rem;
+  }
+  
+  .aboutus-img {
+    width: 25%;
+    
+    margin: 2rem;
+  }
+  
+  .aboutus-card-body {
+    display: flex;
+    justify-content: center;
+    width: 85%;
+    margin: 2rem;
+    padding: 1rem;
+  }
+  
+  #about-us-row2 {
+    margin-top: -4rem;
+  }
 }

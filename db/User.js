@@ -46,6 +46,12 @@ const userSchema = new mongoose.Schema({
             ref : 'Job'
         }
     ],
+    Internshipapplication : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'Internship'
+        }
+    ],
 
     Internshipapplication : [
         {

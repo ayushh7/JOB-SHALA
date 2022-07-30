@@ -67,5 +67,24 @@ module.exports.deleteInternship = async(req,res)=>{
     res.redirect('/internships');
 };
 
+module.exports.renderEditForm = async(req,res)=>{
+    const {id} = req.params;
+    const internship = await Internship.findById(id);
+    if(!internship){
+       req.flash('error','Cannot find that internship!');
+       return res.redirect('/internships'); 
+   }
+    res.render('internships/internshipedit',{internship});
+};
+
+module.exports.updateInternship = async(req,res)=>{
+    const {id} = req.params;
+    console.log(req.body);
+    const internship = await Internship.findByIdAndUpdate(id,{$set : req.body},{new:true});
+    await internship.save();
+    req.flash('success','Successfully updated internship!')
+    res.redirect(`/internships/${internship._id}`);
+};
+
 
 

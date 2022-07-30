@@ -1,101 +1,124 @@
+html{
+  padding:0; margin:0; height:100%;
+}
 
 body{
-    /* background:#eee; */
-    background-image: url(../images/3063545.webp);
-    
-  }
-  li{
-    margin-left: 10px;
-    margin-right: 10px;
-    box-shadow: 0px 3px 10px  #0e2832;
-  }
-  .card{
-    zoom:95%;
-    border:none;
+  /* background:#eee; */
+  background-image: url(../images/3063545.webp);
+  padding:0; margin:0; height:100%;
   
-    position:relative;
-    overflow:hidden;
-    border-radius:8px;
-    box-shadow: 1px 5px 10px #51a5c6;
-   
-  }
+}
+.liclass{
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 0px 3px 10px  #0e2832;
+}
+.card{
+
+  border:none;
+
+  position:relative;
+  overflow:hidden;
+  border-radius:8px;
+  box-shadow: 1px 5px 10px #51a5c6;
+  margin-bottom: auto;
+ 
+}
+
+
+.card:before{
   
-  .card:before{
-    
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:4px;
-    height:100%;
-    background-color:#228fb3;
-    transform:scaleY(1);
-    transition:all 0.5s;
-    transform-origin: bottom
-  }
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  background-color:#228fb3;
+  transform:scaleY(1);
+  transition:all 0.5s;
+  transform-origin: bottom
+}
+
+
+
+
+
+.fonts{
+  font-size:14px;
+}
+
+
+a:link,a:visited,a:hover,a:active {
+  font-size:14px;
+  color: #51a5c6;
+}
+
+
+
+.buttons button:nth-child(1){
+     border:none !important;
+     
+     color:#fff;
+     height:40px;
+     background-color:#358eab;
+     
+     
+}
+
+.buttons button:nth-child(1):hover{
+     /* border:1px solid #228fb3 !important; */
+     color:#fff;
+     height:40px;
+     background-color:#2d7c94;
+     
+}
+
+
+.companytitle{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  font-size: 44px;
+}
+#jobdetails{
+  align-items: center;
+  margin-top:2rem;
+  font-size: 14px;
   
+}
+#skills{
+  align-items: center;
+  margin-top:-1rem;
+  font-size: 14px;
+  margin-bottom: 35px;
   
-  
-  
-  
-  .fonts{
-    font-size:11px;
-  }
-  
-  
-  a:link,a:visited,a:hover,a:active {
-    font-size:14px;
-    color: #51a5c6;
-  }
-  
-  
-  
-  .buttons button:nth-child(1){
-       border:none !important;
-       color:#010f14;
-       height:40px;
-       box-shadow: 0px 3px 10px  #264552;
-       
-  }
-  
-  .buttons button:nth-child(1):hover{
-       border:1px solid #228fb3 !important;
-       color:#fff;
-       height:40px;
-       background-color:#52a7c4;
-  }
-  
-  
-  .companytitle{
-    text-align:center;
-    margin-left:auto;
-    margin-right:auto;
-    font-size: 44px;
-  }
-  #jobdetails{
-    align-items: center;
-    margin-top:2rem;
-    font-size: 14px;
-    
-  }
-  #skills{
-    align-items: center;
-    margin-top:-1rem;
-    font-size: 14px;
-    margin-bottom: 35px;
-    
-  }
-  .requiredskills{
-    margin:20px;
-    text-align:center;
-    font-size: 14px;
-  }
-  @media  screen and (max-width:700px) {
-  
-    li{
-        padding:1px;
-    margin-left: 0px;
-    margin-right: -6.5px;
-    box-shadow: 0px 3px 10px  #0e2832;
-  }
-  }
+}
+.requiredskills{
+  margin:20px;
+  text-align:center;
+  font-size: 14px;
+}
+@media  screen and (max-width:1000px) {
+
+  .liclass{
+  margin-left: 2px;
+  max-height: 5rem;
+  max-width:25rem;
+  margin-right: 2px;
+  font-size: 10px;
+  box-shadow: 0px 3px 10px  #0e2832;
+}
+.card{
+
+  border:none;
+zoom:120%;
+  position:relative;
+  overflow:hidden;
+  border-radius:8px;
+  box-shadow: 1px 5px 10px #51a5c6;
+  margin-top:auto;
+  margin-bottom: auto;
+ 
+}
+}

@@ -73,6 +73,25 @@ module.exports.deleteJob = async(req,res)=>{
     res.redirect('/jobs');
 };
 
+module.exports.renderEditForm = async(req,res)=>{
+    const {id} = req.params;
+    const job = await Job.findById(id);
+    if(!job){
+       req.flash('error','Cannot find that job!');
+       return res.redirect('/jobs'); //Necessary to redirect
+   }
+    res.render('jobs/jobedit',{job});
+};
+
+module.exports.updateJob = async(req,res)=>{
+    const {id} = req.params;
+    console.log(req.body);
+    const job = await Job.findByIdAndUpdate(id,{$set : req.body},{new:true});
+    await job.save();
+    req.flash('success','Successfully updated job!')
+    res.redirect(`/jobs/${job._id}`);
+};
+
 
 exports.getAllJobs = (async (req, res, next) => {
     let resultperpage=4;

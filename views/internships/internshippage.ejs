@@ -39,12 +39,12 @@
                             <div>
                                 <ul class="list-group list-group-horizontal d-flex justify-content-center"
                                     id="jobdetails">
-                                    <li class="list-group-item">Apply By: <%=internship.Lastdate%>
+                                    <li class="list-group-item liclass">Apply By: <%=internship.Lastdate%>
                                     </li>
-                                    <li class="list-group-item">Stipend: <%=internship.Stipend%> INR</li>
-                                    <li class="list-group-item">Start Date: <%=internship.Startdate%>
+                                    <li class="list-group-item liclass">Stipend: <%=internship.Stipend%> INR</li>
+                                    <li class="list-group-item liclass">Start Date: <%=internship.Startdate%>
                                     </li>
-                                    <li class="list-group-item">Duration: <%=internship.Duration%> weeks</li>
+                                    <li class="list-group-item liclass">Duration: <%=internship.Duration%> weeks</li>
                                 </ul>
                             </div>
                             <div class="requiredskills">Skills Required</div>
@@ -53,7 +53,7 @@
                             <ul class="list-group list-group-horizontal d-flex justify-content-center" id="skills">
                                 <% var array=internship.skills.split(','); %>
                                     <% for(var i=0; i < array.length; i++){ %>
-                                        <li class="list-group-item">
+                                        <li class="list-group-item liclass">
                                             <%=array[i]%>
                                         </li>
                                         <% } %>

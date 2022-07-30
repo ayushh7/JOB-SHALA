@@ -39,10 +39,10 @@
                             <div>
                                 <ul class="list-group list-group-horizontal d-flex justify-content-center"
                                     id="jobdetails">
-                                    <li class="list-group-item">Apply By: <%=job.Lastdate%>
+                                    <li class="list-group-item liclass">Apply By: <%=job.Lastdate%>
                                     </li>
-                                    <li class="list-group-item">CTC: <%=job.CTC%> INR</li>
-                                    <li class="list-group-item">Start Date: <%=job.Startdate%>
+                                    <li class="list-group-item liclass">CTC: <%=job.CTC%> INR</li>
+                                    <li class="list-group-item liclass">Start Date: <%=job.Startdate%>
                                     </li>
                                 </ul>
                             </div>
@@ -52,14 +52,17 @@
                             <ul class="list-group list-group-horizontal d-flex justify-content-center" id="skills">
                                 <% var array=job.skills.split(','); %>
                                     <% for(var i=0; i < array.length; i++){ %>
-                                        <li class="list-group-item">
+                                        <li class="list-group-item liclass">
                                             <%=array[i]%>
                                         </li>
                                         <% } %>
                             </ul>
 
                         </div>
-                        <div>Job Description</div>
+                        <div class="text-center mt-1">
+                            <h5 class="mt-0 mb-0">
+                                Job Description
+                            </h5>
                         <div class="px-4 mt-1">
                             <p class="fonts">
                                 <%=job.Descriptions%>

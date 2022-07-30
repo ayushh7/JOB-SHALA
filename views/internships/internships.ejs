@@ -76,8 +76,10 @@
                             </div> -->
                             <% if(currentUser && internships[i].Employer &&
                                 internships[i].Employer.equals(currentUser._id)){ %>
-                                <form class="d-inline" action="/jobs/<%=internships[i]._id%>?_method=DELETE"
+                                <form class="d-inline" action="/internships/<%=internships[i]._id%>?_method=DELETE"
                                     method="POST">
+                                    <a class="card-link btn btn-info me-3"
+                                        href="/internships/<%=internships[i]._id%>/edit">Edit</a>
                                     <button class="btn btn-danger">
                                         DELETE
                                     </button>
