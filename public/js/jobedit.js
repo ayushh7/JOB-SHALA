@@ -40,26 +40,38 @@ s_a[34]=" Almora | Bageshwar | Bhatwari | Chakrata | Chamoli | Champawat | Dehra
 s_a[35]=" Adra | Alipurduar | Amlagora | Arambagh | Asansol | Balurghat | Bankura | Bardhaman | Basirhat | Berhampur | Bethuadahari | Birbhum | Birpara | Bishanpur | Bolpur | Bongoan | Bulbulchandi | Burdwan | Calcutta | Canning | Champadanga | Contai | Cooch Behar | Daimond Harbour | Dalkhola | Dantan | Darjeeling | Dhaniakhali | Dhuliyan | Dinajpur | Dinhata | Durgapur | Gangajalghati | Gangarampur | Ghatal | Guskara | Habra | Haldia | Harirampur | Harishchandrapur | Hooghly | Howrah | Islampur | Jagatballavpur | Jalpaiguri | Jhalda | Jhargram | Kakdwip | Kalchini | Kalimpong | Kalna | Kandi | Karimpur | Katwa | Kharagpur | Khatra | Krishnanagar | Mal Bazar | Malda | Manbazar | Mathabhanga | Medinipur | Mekhliganj | Mirzapur | Murshidabad | Nadia | Nagarakata | Nalhati | Nayagarh | Parganas | Purulia | Raiganj | Rampur Hat | Ranaghat | Seharabazar | Siliguri | Suri | Takipur | Tamluk";
 
 
+
+
 function print_state(state_id){
+    var sts = document.getElementById('statehidden');
 	// given the id of the <select> tag as function argument, it inserts <option> tags
 	var option_str = document.getElementById(state_id);
 	option_str.length=0;
-	option_str.options[0] = new Option('Select State','');
+	option_str.options[0] = new Option("select",'');
 	option_str.selectedIndex = 0;
 	for (var i=0; i<state_arr.length; i++) {
 		option_str.options[option_str.length] = new Option(state_arr[i],state_arr[i]);
+        if(state_arr[i] === sts.value){
+            option_str.options[option_str.length-1].selected=true;
+        }
 	}
 }
 
 
 function print_city(city_id, city_index){
+    var cit = document.getElementById('cityhidden');
 	var option_str = document.getElementById(city_id);
 	option_str.length=0;	// Fixed by Julian Woods
-	option_str.options[0] = new Option('Select City','');
+	option_str.options[0] = new Option('select','');
 	option_str.selectedIndex = 0;
 	var city_arr = s_a[city_index].split("|");
-	for (var i=0; i<city_arr.length; i++) {
+	for (var i=0; i<city_arr.length; i++) 
+    {
 		option_str.options[option_str.length] = new Option(city_arr[i],city_arr[i]);
+        if(city_arr[i] === cit.value){
+            option_str.options[option_str.length-1].selected=true;
+        }
 	}
 }
-
+var x = document.getElementById('lastdate');
+console.log(x.value);

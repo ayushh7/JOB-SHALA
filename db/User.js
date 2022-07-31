@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 const passport = require('passport');
+const Job = require('./Job');
+const Internship = require('./Internship');
+
 
 
 const userSchema = new mongoose.Schema({
@@ -43,6 +46,7 @@ const userSchema = new mongoose.Schema({
             ref : 'Job'
         }
     ],
+    
     Internshipapplication : [
         {
             type : mongoose.Schema.Types.ObjectId,
@@ -50,9 +54,9 @@ const userSchema = new mongoose.Schema({
         }
     ],
 
+   
 });
 
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
 module.exports = new mongoose.model('User', userSchema);
-

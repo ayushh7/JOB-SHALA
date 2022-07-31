@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') %>
 
-    <script src="/js/city.js"></script>
+    <script src="/js/jobedit.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/jobform.css">
 
@@ -28,13 +28,18 @@
                                     name="Name" placeholder="" value="<%=job.Name%> "> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label
                                     class="form-control-label px-3">Last Date to Apply</label> <input type="date"
-                                    id="desc" name="Lastdate" placeholder="Select a date">
+                                    id="desc" name="Lastdate" placeholder="Select a date" value="<%=job.Lastdate%>">
                             </div>
                         </div>
 
 
                         <div class="row justify-content">
                             <div>Location</div>
+
+                            <input hidden type='text' id="statehidden" name="statehidden"
+                                value="<%= job.State %>"></input>
+                            <input hidden type='text' id="cityhidden" name="cityhidden"
+                                value="<%= job.Location %>"></input>
 
                             <div class="form-group col-sm-6 flex-column d-flex">
 
@@ -54,7 +59,8 @@
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3">Start Date</label>
-                                <input type="date" id="desc" name="Startdate" placeholder="Select a date">
+                                <input type="date" id="desc" name="Startdate" placeholder="Select a date"
+                                    value="<%=job.Startdate%>">
                             </div>
 
 
