@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){ //This ensures that the dotenv files which contains the details of our cloudinary account won't be accessible when the project is in production mode and not in development mode
+    require('dotenv').config();
+}
+
 const express = require('express');
 const session = require('express-session')
 const bodyParser = require("body-parser");
@@ -20,8 +24,6 @@ const homeRoute = require('./routes/homeroute');
 const jobRoute = require('./routes/jobroute');
 const internshipRoute = require('./routes/internshiproute');
 const dashboardRoute = require('./routes/dashboardroute');
-
-require("dotenv/config");
 
 const dbUrl = process.env.CONNECTION_URL;
 mongoose.connect(dbUrl);
