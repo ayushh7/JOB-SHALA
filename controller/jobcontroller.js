@@ -28,20 +28,20 @@ module.exports.createjob  = async (req,res,next) => {
         console.log(req.user);
         job.Employer = req.user._id;
     
-        // const isCreated = await job.save();
+        const isCreated = await job.save();
  
         console.log(job);
-        // res.redirect('/jobs');
-        // if(isCreated)
-        // {
-        //    console.log(isCreated);
-        //    res.redirect('/jobs');
-        //    req.flash('success_msg','Job Created Successfully');
-        // }
-        // else
-        // {
-        //     console.log('Job not Created');
-        // }
+        res.redirect('/jobs');
+        if(isCreated)
+        {
+           console.log(isCreated);
+           res.redirect('/jobs');
+           req.flash('success_msg','Job Created Successfully');
+        }
+        else
+        {
+            console.log('Job not Created');
+        }
     } 
 
     catch (err) {

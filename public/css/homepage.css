@@ -107,9 +107,14 @@ img.w-100{
 }
 
 .color {
-  color: rgb(30, 154, 182);
-  display: flex;
-  justify-content: flex-end;
+  color: #3a3599;
+ 
+  /* display:inline-block; */
+  float: right;
+  /* text-align: right; */
+  /* align-self: flex-end; */
+  /* align-items: end; */
+  /* justify-content: ; */
   margin-right: 5rem;
   font-size:1rem;
 }
@@ -118,9 +123,16 @@ img.w-100{
   padding: 2rem 5rem;
 }
 
+.col-sm-4{
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
 .card:hover
 {
-  box-shadow: 3px 3px 6px 6px #3569ad;
+  color: #3a3599;
+  box-shadow: 3px 3px 6px 6px #3a3599;
+  zoom:110%;
 }
 
 .card-img-top {

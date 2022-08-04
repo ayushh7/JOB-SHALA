@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') %>
-<script src="/js/jobedit.js"></script>
- 
+
+    <script src="/js/jobedit.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/css/jobform.css">
 
@@ -26,31 +26,31 @@
                             <div class="form-group col-sm-6 flex-column d-flex"> <label
                                     class="form-control-label px-3">Job Title</label> <input type="text" id="job"
                                     name="Name" placeholder="" value="<%=job.Name%> "> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                
-                                <label class="form-control-label px-3">Last Date to Apply</label> 
-                                <input type="date"
-                                    id="desc" name="Lastdate" placeholder="Select a date" value = "<%= job.Lastdate %>">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                    class="form-control-label px-3">Last Date to Apply</label> <input type="date"
+                                    id="desc" name="Lastdate" placeholder="Select a date" value="<%=job.Lastdate%>">
                             </div>
                         </div>
 
 
                         <div class="row justify-content">
-    
                             <div>Location</div>
-                            
-                            <input hidden type = 'text' id = "statehidden" name = "statehidden" value = "<%= job.State %>"></input>
-                                <input hidden type = 'text' id = "cityhidden" name = "cityhidden" value = "<%= job.Location %>"></input>
-                            
+
+                            <input hidden type='text' id="statehidden" name="statehidden"
+                                value="<%= job.State %>"></input>
+                            <input hidden type='text' id="cityhidden" name="cityhidden"
+                                value="<%= job.Location %>"></input>
+
                             <div class="form-group col-sm-6 flex-column d-flex">
-        
+
                                 <select onclick="print_city('state', this.selectedIndex);" id="sts" name="State"
                                     class="form-control" required>
                                 </select>
                             </div>
-
                             <div class=" form-group col-sm-6 flex-column d-flex">
-                                <select name="Location" id="state" class="form-control" required></select>
+
+                                <select name="Location" id="state" class="form-control" value="<%=job.Location%> "
+                                    required></select>
                                 <script language="javascript">print_state("sts");</script>
                             </div>
 
@@ -58,9 +58,9 @@
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                               
                                 <label class="form-control-label px-3">Start Date</label>
-                                <input type="date" id="desc" name="Startdate" placeholder="Select a date" value = "<%= job.Startdate %>">
+                                <input type="date" id="desc" name="Startdate" placeholder="Select a date"
+                                    value="<%=job.Startdate%>">
                             </div>
 
 
@@ -103,8 +103,6 @@
                     </div>
 
                 </div>
-                
-        
                 </form>
             </div>
         </div>
@@ -112,5 +110,5 @@
     </div>
 
 
-    
+
     <script src="/js/forms.js"></script>
