@@ -31,17 +31,17 @@ module.exports.createjob  = async (req,res,next) => {
         // const isCreated = await job.save();
  
         console.log(job);
-        // res.redirect('/jobs');
-        // if(isCreated)
-        // {
-        //    console.log(isCreated);
-        //    res.redirect('/jobs');
-        //    req.flash('success_msg','Job Created Successfully');
-        // }
-        // else
-        // {
-        //     console.log('Job not Created');
-        // }
+        res.redirect('/jobs');
+        if(isCreated)
+        {
+           console.log(isCreated);
+           res.redirect('/jobs');
+           req.flash('success_msg','Job Created Successfully');
+        }
+        else
+        {
+            console.log('Job not Created');
+        }
     } 
 
     catch (err) {
@@ -53,12 +53,7 @@ module.exports.createjob  = async (req,res,next) => {
 module.exports.showJob = async(req,res)=>{
     const {id} = req.params;
     const job = await Job.findById(id)
-    // .populate({
-    //     path : '',
-    //     populate : {
-    //         path : 'author'
-    //     }
-    // }).populate('author');
+ 
     if(!job){
         req.flash('error','Cannot find that job!');
         return res.redirect('/jobs'); //Necessary to redirect
@@ -146,9 +141,5 @@ exports.Applyjob = async (req,res,next) =>{
         // console.log(ok); 
             req.flash('success','You have successfully applied for this job'); 
             res.redirect('/jobs');
-   
-
-  
-        
      
 }
