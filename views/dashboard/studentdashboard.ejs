@@ -50,52 +50,11 @@
                 <h1 class="app-content-headerText">Dashboard</h1>
                 <button class="app-content-headerButton">My Profile</button>
             </div>
-            <div class="products-area-wrapper">
-                <div class="products-header">
-                    <div class="product-cell company">Company</div>
-                    <div class="product-cell role">Role</div>
-                    <div class="product-cell date">Applied on</div>
-                    <div class="product-cell applicants">No. of applicants</div>
-                    <div class="product-cell status-cell">Status</div>
-                    <div class="product-cell review"></div>
-                </div>
-                <div class="products-row">
-                    <div class="product-cell company"><span>Google</span></div>
-                    <div class="product-cell role"><span class="cell-label">SDE-1</span></div>
-                    <div class="product-cell date"><span class="cell-label">11 June' 22</span></div>
-                    <div class="product-cell applicants"><span class="cell-label">36</span></div>
-                    <div class="product-cell status-cell">
-                        <span class="cell-label"></span>
-                        <span class="status active">Selected</span>
-                    </div>
-                    <div class="product-cell review"><span class="cell-label">Review Application</span></div>
-                </div>
-                <div class="products-row">
-                    <div class="product-cell company"><span>Lou</span></div>
-                    <div class="product-cell role"><span class="cell-label">SDE-1</span></div>
-                    <div class="product-cell date"><span class="cell-label">11 June' 22</span></div>
-                    <div class="product-cell applicants"><span class="cell-label">36</span></div>
-                    <div class="product-cell status-cell">
-                        <span class="cell-label"></span>
-                        <span class="status disabled">Not Selected</span>
-                    </div>
-                    <div class="product-cell review"><span class="cell-label">Review Application</span></div>
-                </div>
-                <div class="products-row">
-                    <div class="product-cell company"><span>Yellow</span></div>
-                    <div class="product-cell role"><span class="cell-label">SDE-1</span></div>
-                    <div class="product-cell date"><span class="cell-label">11 June' 22</span></div>
-                    <div class="product-cell applicants"><span class="cell-label">36</span></div>
-                    <div class="product-cell status-cell">
-                        <span class="cell-label"></span>
-                        <span class="status active">Selected</span>
-                    </div>
-                    <div class="product-cell review"><span class="cell-label">Review Application</span></div>
-                </div>
+          
                 <% for(var i = 0;i < jobApplications.length; i++){ %>
                 <div class="products-row">
-                    <div class="product-cell company"><span>Dreamy</span></div>
-                    <div class="product-cell role"><span class="cell-label">SDE-1</span></div>
+                    <div class="product-cell company"><span><%= jobApplications[i].Company%></span></div>
+                    <div class="product-cell role"><span class="cell-label"><%= jobApplications[i].Name%></span></div>
                     <div class="product-cell date"><span class="cell-label">11 June' 22</span></div>
                     <div class="product-cell applicants"><span class="cell-label">36</span></div>
                     <div class="product-cell status-cell">
@@ -105,17 +64,7 @@
                     <div class="product-cell review"><span class="cell-label">Review Application</span></div>
                 </div>
                  <% } %>
-                <div class="products-row">
-                    <div class="product-cell company"><span>Boheme</span></div>
-                    <div class="product-cell role"><span class="cell-label">SDE-1</span></div>
-                    <div class="product-cell date"><span class="cell-label">11 June' 22</span></div>
-                    <div class="product-cell applicants"><span class="cell-label">36</span></div>
-                    <div class="product-cell status-cell">
-                        <span class="cell-label"></span>
-                        <span class="status active">Selected</span>
-                    </div>
-                    <div class="product-cell review"><span class="cell-label">Review Application</span></div>
-                </div>
+                
             </div>
         </div>
     </div>

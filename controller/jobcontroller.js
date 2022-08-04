@@ -128,7 +128,8 @@ exports.Applyjob = async (req,res,next) =>{
         
         for(var i = 0; i < user.Jobapplication.length; i++)
         {
-            if(user.Jobapplication[i]._id === req.params.id)
+            console.log(user.Jobapplication[i].toString());
+            if(user.Jobapplication[i]._id.toString() === req.params.id)
             {
                 req.flash('error','You have already applied for this job');
                 return res.redirect('/jobs');
