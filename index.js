@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){ //This ensures that the dotenv files which contains the details of our cloudinary account won't be accessible when the project is in production mode and not in development mode
+    require('dotenv').config();
+}
+
 const express = require('express');
 const session = require('express-session')
 const bodyParser = require("body-parser");
@@ -21,8 +25,6 @@ const jobRoute = require('./routes/jobroute');
 const internshipRoute = require('./routes/internshiproute');
 const dashboardRoute = require('./routes/dashboardroute');
 
-require("dotenv/config");
-
 const dbUrl = process.env.CONNECTION_URL;
 mongoose.connect(dbUrl);
 
@@ -35,8 +37,8 @@ db.once("open",()=>{
 
 const app = express();
 
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({extended:true}));
 app.engine('ejs', ejsmate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -100,5 +102,5 @@ app.use('/internships', internshipRoute);
 app.use('/', dashboardRoute);
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => { console.log(`server is running on : ${PORT}`) })

@@ -116,20 +116,21 @@
                                     class="form-control bg-white border-left-0 border-md" id="Company">
 
                             </div>
-                             <!-- About Company-->
-                             <div class="input-group col-lg-12 mb-4">
+                            <!-- About Company-->
+                            <div class="input-group col-lg-12 mb-4">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-1 border-md border-right-0">
-                                        
+
                                         <i class="fa-regular fa-ballot text-muted"></i>
                                         <!-- <i class="fa fa-pencil-square-o text-muted"></i> -->
                                     </span>
                                 </div>
-                                
-                               
+
+
                                 <textarea id="descriptions" cols="40" rows="3" placeholder=" About Company"
-                                name="Descriptions" class="form-control bg-white border-md border-left-0 pl-3"></textarea>
-                                
+                                    name="Descriptions"
+                                    class="form-control bg-white border-md border-left-0 pl-3"></textarea>
+
 
                             </div>.
 
@@ -138,7 +139,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-white px-4 border-md border-right-0">
                                         <i class="fa fa-envelope text-muted"></i>
-                                      
+
                                     </span>
                                 </div>
                                 <input type="email" name="email" placeholder="Email Address"
@@ -146,7 +147,7 @@
 
                             </div>
 
-        
+
 
 
 
@@ -173,13 +174,14 @@
                                     placeholder="Confirm Password"
                                     class="form-control bg-white border-left-0 border-md">
                             </div>
-                                               
+
 
                             <!-- Submit Button -->
                             <!-- Submit Button -->
                             <div class="form-group col-lg-12 mx-auto mb-0">
                                 <!-- <a href="#" class="btn btn-primary btn-block py-2"> -->
-                                <button type="submit" class="font-weight-bold btn btn-primary btn-block py-2">Create
+                                <button type="submit" class="font-weight-bold btn btn-primary btn-block py-2"
+                                    onclick="return Validate()">Create
                                     your account</button>
                             </div>
 
@@ -213,6 +215,17 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            function Validate() {
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("passwordConfirmation").value;
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match!");
+                    return false;
+                }
+                return true;
+            }
+        </script>
 </body>
 
 </html>

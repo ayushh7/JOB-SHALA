@@ -31,6 +31,8 @@ module.exports.jobSchema = Joi.object({
         skills : Joi.string(),
         Name: Joi.string().required().escapeHTML(),
         State: Joi.string().required(),
+        statehidden : Joi.string(),
+        cityhidden : Joi.string(),
         Location: Joi.string().required(),
         Startdate : Joi.string().required().escapeHTML(),
         CTC : Joi.number().required().min(0)
@@ -44,6 +46,8 @@ module.exports.internshipSchema = Joi.object({
     skills : Joi.string(),
     Name: Joi.string().required().escapeHTML(),
     State: Joi.string().required().escapeHTML(),
+    statehidden : Joi.string(),
+    cityhidden : Joi.string(),
     Location: Joi.string().required().escapeHTML(),
     Startdate : Joi.string().required().escapeHTML(),
     Stipend : Joi.number().required().min(0),
