@@ -135,9 +135,11 @@ exports.Applyjob = async (req,res,next) =>{
                 return res.redirect('/jobs');
             }
         }
-
+        Jobfind.Applicants.push(user);      
+        console.log(Jobfind);
         user.Jobapplication.push(Jobfind);
         await user.save();
+        await Jobfind.save();
         // const ok = await user.populate('Jobapplication');
         // console.log(ok); 
             req.flash('success','You have successfully applied for this job'); 
