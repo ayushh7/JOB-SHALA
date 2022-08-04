@@ -45,11 +45,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const secret = 'thisshouldbeabettersecret';
+// const secret = 'thisshouldbeabettersecret';
 
 const store = MongoStore.create({
     mongoUrl : dbUrl,
-    secret,
+    secret : 'yoyo',
     touchAfter : 24 * 60 * 60 
 });
 
@@ -60,7 +60,7 @@ store.on("error",function(e){
 const sessionConfig = {
     store : store,
     name : 'session', 
-    secret,
+    secret : 'yoyo',
     resave : false,
     saveUninitialized : true,
     cookie : {
