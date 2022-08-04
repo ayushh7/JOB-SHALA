@@ -28,7 +28,7 @@ module.exports.createjob  = async (req,res,next) => {
         console.log(req.user);
         job.Employer = req.user._id;
     
-        // const isCreated = await job.save();
+        const isCreated = await job.save();
  
         console.log(job);
         res.redirect('/jobs');
