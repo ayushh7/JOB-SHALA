@@ -30,7 +30,10 @@
   position: relative;
   top: 7px;
 }
-
+.filterbox{
+  margin-top:2px;
+  margin-bottom:2px;
+}
 .location {
   font-size: 15px;
 }
@@ -72,13 +75,13 @@
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  background: turquoise;
+  background: rgb(112, 42, 198);
 }
 
 .color {
   text-decoration: none;
   font-weight: 500;
-  color: turquoise;
+  color: rgb(112, 42, 198);
 }
 
 @media (max-width: 768px) {
@@ -88,11 +91,14 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .pagination {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; 
+  justify-content: center; 
+  position: relative;
   gap: 16px;
-  margin-top: 200px;
+  margin-top: 10rem;
+  margin-bottom:1rem;
 }
 
 .pages {
@@ -114,49 +120,45 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .page:hover {
-  background-color: #087f5b;
+  background-color: rgb(112, 42, 198);
   color: #fff;
 }
 
 .active {
-  background-color: #087f5b;
+  background-color: rgb(112, 42, 198);
   color: #fff;
 }
 
 .custom {
   background-color: #fff;
-  border: 1px solid #087f5b;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
+  border: 1px solid rgb(112, 42, 198);
+  color:rgb(112, 42, 198);
+  height: 30px;
+  font-size:14px;
+  width: 60px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:0.6rem;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .custom:hover {
-  background-color: #087f5b;
+  background-color: rgb(112, 42, 198);
 }
 
 .btn--icon {
   height: 24px;
   width: 24px;
-  stroke: #087f5b;
+  stroke: rgb(112, 42, 198);
 }
 
 .btn--icon:hover {
   stroke: #fff;
 }
 
-.container {
-  width: 20vw;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .range {
   display: flex;
@@ -172,6 +174,10 @@ input[type="range"]::-webkit-slider-thumb {
   margin-left: 45px;
   text-align: center;
   border-left: #e6e4e4 1px solid;
+}
+#company{
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .form-group {
@@ -219,7 +225,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .box {
   display: block;
-  background-color: #31d3c6;
+  background-color: rgb(112, 42, 198);
   color: #043643;
   font-size: 0.8rem;
   width: 100%;

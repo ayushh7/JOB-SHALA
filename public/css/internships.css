@@ -4,12 +4,15 @@
   overflow: hidden;
   margin-top: -6px;
 }
+
 .hide-navigation-item {
   display: none;
 }
 #internship {
   text-align: center;
   color: black;
+  font-weight: 625;
+  font-size: 28px;
   text-decoration: none;
 }
 .stick {

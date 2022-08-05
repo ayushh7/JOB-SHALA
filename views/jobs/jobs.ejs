@@ -11,14 +11,14 @@
                 <div class="card-body">
                     <h5 class="card-title mb-3 text-center">Filter</h5>
                     <form action="/jobs" method="get" id='myForm1'>
-                        <div>Location</div>
+                        <div class="form-label">Location</div>
 
-                        <div class="form-group col-sm-6 flex-column d-flex">
+                        <div class="form-group col-lg-offset-4 flex-column d-flex filterbox">
 
                             <select onchange="print_city('state', this.selectedIndex);" id="sts" name="State"
                                 class="form-control" required></select>
                         </div>
-                        <div class="form-group col-sm-6 flex-column d-flex">
+                            <div class="form-group col-lg-offset-4 flex-column d-flex filterbox">
 
                             <select name="Location" id="state" class="form-control" required></select>
                             <script language="javascript">print_state("sts");</script>
@@ -35,7 +35,7 @@
                     <form action="/jobs" method="get" id='myForm2'>
                         <div class="mb-3">
 
-                            <label for="Company" class="form-label">Company Name</label>
+                            <label for="customRange2" class="text-center form-label">Company Name</label>
                             <input type="text" name="title" class="form-control" id="Company" value="<%= query.title %>"
                                 placeholder="e.g. Amazon">
                             <input type="text" hidden name="Location" value="<%= query.Location %>">
@@ -44,7 +44,7 @@
                         <button type="submit" class="custom btn btn-outline-info">Apply</button>
                     </form>
                     <form action="/jobs" method="get" id='myForm2'>
-                        <label for="customRange2" class="form-label">Desired minimum monthly stipend (₹)</label>
+                        <label for="customRange2" class="text-center form-label">Desired minimum monthly stipend (₹)</label>
                         <input name='mi' type="range" id="myRange" class="form-range" min="0" max="100000"
                             id="customRange2" step=1000 value='<%= query.mi %>'>
                         <div id="demo">
@@ -117,12 +117,12 @@
                     </div>
                 </div>
 
-
+                
                 <% } %>
 
         </div>
 
-        <div class="col-7 hide">
+        <div class="text-xs-center">
             <div class="pagination">
                 <form action="/jobs" method="get" class="form-products">
                     <% if(page> 1) { %>
@@ -130,11 +130,11 @@
                         <label class="b btn mx - 2" for="prev">
                             <svg xmlns="http://www.w3.org/2000/svg" class="btn--icon" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                            </svg>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20 19l-7-7 7-7" />
+                            </svg> 
                         </label>
                         <input id="prev" hidden type="submit" name="page" value="<%= page-1 %>" />
-                        <input hidden name="mi" value="<%= query.mi%>" />"
+                        <input hidden name="mi" value="<%= query.mi%>" />
                         <input hidden name="title" value="<%= query.title%>" />
                         <input hidden name="CompanyName" value="<%= query.CompanyName %>" />
                         <% } %>
@@ -151,13 +151,13 @@
                             <label class="b-btn mx - 2" for="next">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="btn--icon" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 5l7 7-7 7-7" />
                                 </svg>
                             </label>
 
                             <input hidden type="submit" name="page" value="<%= page+1 %>" />
                             <input id="next" hidden type="submit" name="page" value="<%= page+1 %>" />
-                            <input hidden name="mi" value="<%= query.mi%>" />"
+                            <input hidden name="mi" value="<%= query.mi%>" />
                             <input hidden name="title" value="<%= query.title%>" />
                             <input hidden name="CompanyName" value="<%= query.CompanyName %>" />
                             <% } %>
