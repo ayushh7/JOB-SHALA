@@ -123,22 +123,33 @@ img.w-100{
   padding: 2rem 5rem;
 }
 
+.col-lg-1 {
+  width: 12%;
+}
 .col-sm-4{
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
+.card {
+  border: 0px;
+}
 .card:hover
 {
   color: #3a3599;
-  box-shadow: 3px 3px 6px 6px #3a3599;
-  zoom:110%;
+  box-shadow: 1px 1px 2px 2px #3a3599;
+  zoom:105%;
 }
 
 .card-img-top {
-  padding: 2rem;
+  padding: 1rem;
 }
-
+.card-body {
+  padding: 0.5rem;
+}
+.card-text {
+  font-size: 1rem;
+}
 .aboutus {
   height: fit-content;
   margin-top: 5rem;
