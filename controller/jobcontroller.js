@@ -53,12 +53,7 @@ module.exports.createjob  = async (req,res,next) => {
 module.exports.showJob = async(req,res)=>{
     const {id} = req.params;
     const job = await Job.findById(id)
-    // .populate({
-    //     path : '',
-    //     populate : {
-    //         path : 'author'
-    //     }
-    // }).populate('author');
+ 
     if(!job){
         req.flash('error','Cannot find that job!');
         return res.redirect('/jobs'); //Necessary to redirect
@@ -133,22 +128,21 @@ exports.Applyjob = async (req,res,next) =>{
         
         for(var i = 0; i < user.Jobapplication.length; i++)
         {
-            if(user.Jobapplication[i]._id === req.params.id)
+            console.log(user.Jobapplication[i].toString());
+            if(user.Jobapplication[i]._id.toString() === req.params.id)
             {
                 req.flash('error','You have already applied for this job');
                 return res.redirect('/jobs');
             }
         }
-
+        Jobfind.Applicants.push(user);      
+        console.log(Jobfind);
         user.Jobapplication.push(Jobfind);
         await user.save();
+        await Jobfind.save();
         // const ok = await user.populate('Jobapplication');
         // console.log(ok); 
             req.flash('success','You have successfully applied for this job'); 
             res.redirect('/jobs');
-   
-
-  
-        
      
 }
