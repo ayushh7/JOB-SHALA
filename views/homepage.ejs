@@ -2,117 +2,128 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/homepage.css">
     <div class="image-slide" id="image-slide">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="images/CP.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="images/WebD.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="images/AppD.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="images/ML.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+        <% const State=["Karnataka", "Delhi" , "Andhra Pradesh" , "Maharashtra" , "Tamil Nadu" , "Maharashtra"
+            , "West Bengal" , "Rajasthan" ] %>
+            <% const City=["Bangalore", "North Delhi" , "Hyderabad" , "Mumbai" , "Chennai" , "Pune" , "Kolkata"
+                , "Jaipur" ] %>
+                <% const Image=["Bangalore", "/icons/delhi.png" , "/icons/hyderabad.png" , "/icons/mumbai.png"
+                    , "/icons/chennai.png" , "Pune" , "Kolkata" , "Jaipur" ] %>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/CP.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/WebD.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/AppD.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/ML.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
     </div>
-    
+
     <div class="internships" id="internships">
         <h1 class="mb-5">Internships</h1>
-        
-        <h3 id="secondary-heading">Popular Cities<a href="#" >
-            <span class="color">View all internships ><i class="material-icons icon"></i></span></a></h3>
+
+        <h3 id="secondary-heading">Popular Cities<a href="/internships">
+                <span class="color">View all internships ><i class="material-icons icon"></i></span></a></h3>
         </h3>
         <div class="row">
-           
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1;">
-                <div class="card h-100 text-center">
-                    <img src="/icons/work-from-home.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Work from Home
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/work-from-home.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Work from Home
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
-        
-            <div class="col-lg-2 col-sm-4 col-6">
-            <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/delhi.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            New Delhi
-                        </h5>
-                    </div>
-                </div>
-             </a>
-            </div>
+
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/mumbai.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Mumbai
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/delhi.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                New Delhi
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/hyderabad.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Hyderabad
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/mumbai.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Mumbai
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/chennai.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Chennai
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/hyderabad.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Hyderabad
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/gurugram.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Gurugram
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/chennai.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Chennai
+                            </h5>
+                        </div>
                     </div>
-                </div>
+                </a>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-6">
+                <a target="_blank" href="#" style="flex: 1">
+                    <div class="card h-100 text-center">
+                        <img src="/icons/gurugram.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Gurugram
+                            </h5>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -120,74 +131,74 @@
         <div class="row">
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/part-time.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Part time
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/part-time.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Part time
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/engineering.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Engineering
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/engineering.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Engineering
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <div class="card h-100 text-center">
                     <a target="_blank" href="#" style="flex: 1">
-                    <img src="/icons/mba.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            MBA
-                        </h5>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="col-lg-2 col-sm-4 col-6">
-                <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/media.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Media
-                        </h5>
-                    </div>
+                        <img src="/icons/mba.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                MBA
+                            </h5>
+                        </div>
                 </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/creative.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Creative
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/media.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Media
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/law.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            LAW
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/creative.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Creative
+                            </h5>
+                        </div>
                     </div>
-                </div>
+                </a>
+            </div>
+            <div class="col-lg-2 col-sm-4 col-6">
+                <a target="_blank" href="#" style="flex: 1">
+                    <div class="card h-100 text-center">
+                        <img src="/icons/law.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                LAW
+                            </h5>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
@@ -200,80 +211,80 @@
     </div> -->
     <div class="internships" id="internships">
         <h1 class="mb-5">Jobs</h1>
-        
-        <h3 id="secondary-heading">Popular Cities<a href="#">
-            <span class="color">View all jobs  ><i class="material-icons icon"></i></span></a></h3>
+
+        <h3 id="secondary-heading">Popular Cities<a href="/jobs">
+                <span class="color">View all jobs ><i class="material-icons icon"></i></span></a></h3>
         <div class="row">
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/work-from-home.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Work from Home
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/work-from-home.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Work from Home
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/delhi.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            New Delhi
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/delhi.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                New Delhi
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/mumbai.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Mumbai
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/mumbai.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Mumbai
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/hyderabad.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Hyderabad
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/hyderabad.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Hyderabad
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/chennai.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Chennai
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/chennai.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Chennai
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/gurugram.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Gurugram
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/gurugram.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Gurugram
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
         </div>
@@ -281,131 +292,141 @@
         <div class="row">
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/part-time.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Part time
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/part-time.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Part time
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="../icons/engineering.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Engineering
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="../icons/engineering.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Engineering
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/mba.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            MBA
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/mba.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                MBA
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/media.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Media
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/media.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Media
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/creative.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            Creative
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/creative.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                Creative
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
             <div class="col-lg-2 col-sm-4 col-6">
                 <a target="_blank" href="#" style="flex: 1">
-                <div class="card h-100 text-center">
-                    <img src="/icons/law.png" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            LAW
-                        </h5>
+                    <div class="card h-100 text-center">
+                        <img src="/icons/law.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                LAW
+                            </h5>
+                        </div>
                     </div>
-                </div>
                 </a>
             </div>
         </div>
     </div>
-    <div class="aboutus" id="aboutus">
-        <h1 class="aboutus-heading">About Us</h1>
-        <div class="row" id="about-us-row2">
-            <div class="col-md-6">
-                <div class="aboutus-card">
-                    <img src="/icons/part-time.png" class="aboutus-img" alt="">
-                    <div class="aboutus-card-body">
-                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus tempore
-                            provident
-                            ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam minus
-                            doloremque
-                            rem.
-                        </h6>
+    <a id="about_us_section">
+        <div class="aboutus" id="aboutus">
+            <h1 class="aboutus-heading">About Us</h1>
+            <div class="row" id="about-us-row2">
+                <div class="col-md-6">
+                    <div class="aboutus-card">
+                        <img src="/icons/part-time.png" class="aboutus-img" alt="">
+                        <div class="aboutus-card-body">
+                            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus
+                                tempore
+                                provident
+                                ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam
+                                minus
+                                doloremque
+                                rem.
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="aboutus-card">
+                        <img src="/icons/part-time.png" class="aboutus-img" alt="">
+                        <div class="aboutus-card-body">
+                            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus
+                                tempore
+                                provident
+                                ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam
+                                minus
+                                doloremque
+                                rem.</h6>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="aboutus-card">
-                    <img src="/icons/part-time.png" class="aboutus-img" alt="">
-                    <div class="aboutus-card-body">
-                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus tempore
-                            provident
-                            ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam minus
-                            doloremque
-                            rem.</h6>
+            <div class="row" id="about-us-row2">
+                <div class="col-md-6">
+                    <div class="aboutus-card">
+                        <img src="/icons/part-time.png" class="aboutus-img" alt="">
+                        <div class="aboutus-card-body">
+                            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus
+                                tempore
+                                provident
+                                ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam
+                                minus
+                                doloremque
+                                rem.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="aboutus-card">
+                        <img src="/icons/part-time.png" class="aboutus-img" alt="">
+                        <div class="aboutus-card-body">
+                            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus
+                                tempore
+                                provident
+                                ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam
+                                minus
+                                doloremque
+                                rem.</h6>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row" id="about-us-row2">
-            <div class="col-md-6">
-                <div class="aboutus-card">
-                    <img src="/icons/part-time.png" class="aboutus-img" alt="">
-                    <div class="aboutus-card-body">
-                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus tempore
-                            provident
-                            ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam minus
-                            doloremque
-                            rem.</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="aboutus-card">
-                    <img src="/icons/part-time.png" class="aboutus-img" alt="">
-                    <div class="aboutus-card-body">
-                        <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro neque est, accusamus tempore
-                            provident
-                            ad? Facilis sunt, officiis iusto nam amet possimus neque esse nesciunt, impedit, quam minus
-                            doloremque
-                            rem.</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </a>

@@ -1,0 +1,123 @@
+/* @import 
+url('https://kodhus.com/kodhus-ui/kodhus-0.1.0.min.css'); */
+
+body {
+  background: rgb(173, 173, 173);
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #000000;
+}
+
+.profile-button {
+  box-shadow: none;
+  border: none;
+}
+
+.heading {
+  margin: auto;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+#links {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+.skillcss {
+  margin-top: 20px;
+  /* margin-bottom:-10px; */
+}
+.container {
+  width: 100%;
+  margin: 0px auto;
+}
+.savebutton {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.labels {
+  font-size: 0.8rem;
+}
+
+.address {
+  overflow-y: scroll;
+}
+#tagbutton {
+  width: 13.5%;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.skillcss {
+  margin-top: 5px;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  margin-bottom: 15px;
+  /* margin-bottom:-10px; */
+}
+
+.tag-container {
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  display: flex;
+  height: 80px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 6px;
+  overflow-x: scroll;
+}
+
+.tag-container .tag {
+  height: 30px;
+  margin: 5px;
+  padding: 5px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  color: #333;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px #fff;
+  cursor: default;
+}
+.tag i {
+  font-size: 16px;
+  color: #666;
+  margin-left: 5px;
+}
+.tag-container input {
+  padding: 5px;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  font-family: "Rubik";
+  color: #333;
+  flex: 1;
+}
+
+/* .add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+} */
+
+@media screen and (max-width: 700px) {
+  .skillcss {
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 8px;
+    margin-right: -20px;
+    margin-bottom: 15px;
+    margin-bottom: -10px;
+  }
+  #tagbutton {
+    width: 20%;
+  }
+}

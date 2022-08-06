@@ -17,3 +17,10 @@
 .fas {
   font-size: 17.5px;
 }
+
+.link-button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
