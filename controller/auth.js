@@ -4,6 +4,17 @@ const User = require('../db/User');
 const localStrat = require('passport-local');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const { nanoid }=require('nanoid');
+const nodemailer=require('nodemailer');
+const transporter=nodemailer.createTransport(
+    {
+        service: 'gmail',
+        auth: {
+            user: process.env.email,
+            pass: process.env.email_password,
+        }
+    }
+);
 
 
 require('dotenv').config();
@@ -69,38 +80,83 @@ module.exports.registeremployer = async (req, res, next) => {
         }
         
     }
+    module.exports.verify=async (req, res, next) => {
+        console.log(req.body);
+        let user=new User(
+            {
+                email: req.body.email,
+                FirstName: req.body.FirstName,
+                LastName: req.body.LastName,
+                College : req.body.College,
+                Graduation : req.body.Graduation
+            }
+            );
+        console.log(req.session);
+
+        if ((Number)(req.session.code)==(Number)(req.body.code)) {
+             user=await User.register(user, req.body.password);
+            req.logIn(user, (err) => {
+                if (err) {
+                    console.log(err);
+                    req.flash('error', err.message);
+                    res.redirect('/login');
+                }
+            });
+            const resetEmail={
+                to: user.email,
+                from: process.env.email,
+                subject: 'Account Has Been Successfully Verified',
+                text: `
+                        Account Has Been Successfully Created At Job-Shala.
+                `,
+            }
+
+            transporter.sendMail(resetEmail, (err, info) => {
+                if (err) {
+                    console.log(err);
+                    res.send('Error While Sending Mail');
+                }
+                else {
+                    console.log(info.response);
+                    req.flash('success', 'Successfully Registered!');
+                    res.redirect('/');
+                }
+            })
+        }
+        else {
+            req.flash('error', 'Code Does not match!');
+            res.render('users/verify', { curUser : req.body });
+        }
     
+    }
+
+
     module.exports.registerstudent = async (req, res, next) => {
         try {
             console.log(req.body);
-            
-            const user=new User(
-                {
-                    email: req.body.email,
-                    FirstName: req.body.FirstName,
-                    LastName: req.body.LastName,
-                    College : req.body.College,
-                    Graduation : req.body.Graduation
+            const token=Math.floor(Math.random()*900000+100000);
+            req.session.code=token;
+            const registerEmail={
+                from: process.env.email,
+                to: req.body.email,
+                subject: "Email Verfication",
+                text: `
+                    CODE: ${token}
+                    If you did not request this, please ignore this email.
+                  `,
+            }
+            transporter.sendMail(registerEmail, (err, info) => {
+                if (err) {
+                    console.log(err);
+                    res.send('Error While Sending Mail');
                 }
-                );
-                
-                const regUser=await User.register(user, req.body.password);
-                
-                console.log(regUser);
-                
-                req.logIn(regUser, (err) => {
-                    if (err) {
-                        console.log(err);
-                        req.flash('error', err.message);
-                        res.redirect('/login');
-                    }
-                    req.flash('success','Successfully Registered!');
-                    if (req.session.returnTo) {
-                        res.redirect(req.session.returnTo);
-                        return;
-                    }
-                    res.redirect('/');
-                });
+                else {
+                    console.log(info.response);
+                    // req.flash('success', 'Verification mail sent Successfully!');
+                    res.render('users/verify', { curUser : req.body });
+                }
+            })
+           
             }    
             catch (err) {
                 console.log(err);

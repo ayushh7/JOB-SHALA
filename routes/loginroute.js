@@ -8,6 +8,7 @@ const router=express.Router();
 router.get('/login',(req,res)=>{
     res.render('users/login');
 });
+
 router.post('/login',passport.authenticate('local', {failureFlash: true, failureRedirect: '/login' }),login.login)
 
 router.get('/registeremployer',(req,res)=>{
@@ -16,6 +17,11 @@ router.get('/registeremployer',(req,res)=>{
 router.get('/registerstudent',(req,res)=>{
     res.render('users/registerstudent');
 });
+
+router.route('/verify')
+.get(login.verify)
+.post(login.verify);
+
 
 router.post('/registeremployer',login.registeremployer);
 router.post('/registerstudent',login.registerstudent);

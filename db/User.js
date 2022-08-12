@@ -53,7 +53,9 @@ const userSchema = new mongoose.Schema({
             ref : 'Internship'
         }
     ],
-
+    
+    resetPasswordToken: String,
+    resetPasswordExpires: Date
    
 });
 
