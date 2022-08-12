@@ -24,6 +24,7 @@ const homeRoute = require('./routes/homeroute');
 const jobRoute = require('./routes/jobroute');
 const internshipRoute = require('./routes/internshiproute');
 const dashboardRoute = require('./routes/dashboardroute');
+const profileRoute = require('./routes/profileroute');
 
 const dbUrl = process.env.CONNECTION_URL;
 mongoose.connect(dbUrl);
@@ -100,6 +101,7 @@ app.use('/', homeRoute);
 app.use('/jobs', jobRoute);
 app.use('/internships', internshipRoute);
 app.use('/', dashboardRoute);
+app.use('/profile', profileRoute);
 
 
 

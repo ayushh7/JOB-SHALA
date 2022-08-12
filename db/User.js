@@ -5,7 +5,6 @@ const Job = require('./Job');
 const Internship = require('./Internship');
 
 
-
 const userSchema = new mongoose.Schema({
 
     FirstName: {
@@ -53,9 +52,80 @@ const userSchema = new mongoose.Schema({
             ref : 'Internship'
         }
     ],
-    
     resetPasswordToken: String,
-    resetPasswordExpires: Date
+    resetPasswordExpires: Date,
+
+
+    Linkedin : {
+        type : String,
+        default : null
+    },
+
+    Github : {
+        type : String,
+        default : null
+    },
+
+    Other : {
+        type : String,
+        default : null
+    },
+    
+    Gender : {
+        type : String,
+        default : null
+    },
+
+    Dateofbirth : {
+        type : String,
+        default : null
+    },
+
+    Joining : {
+        type : Number,
+        default : null
+    },
+
+    Mobile : {
+        type : Number,
+        default : null
+    },
+
+    Field : {
+        type : String,
+        default : null
+    },
+
+    Degree : {
+        type : String,
+        default : null
+    },
+
+    Expertise : {
+        type : String,
+        default : null
+    },
+
+    State : {
+        type : String,
+        default : null
+    },
+
+    City : {
+        type : String,
+        default : null
+    },
+
+    Address : {
+        type : String,
+        default : null
+    },
+
+    PIN : {
+        type : Number,
+        default : null
+    }
+
    
 });
 

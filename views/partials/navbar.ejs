@@ -1,163 +1,187 @@
 <link rel="stylesheet" href="/css/navbar.css">
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">JobShala</a>
-        <a class="navbar-brand" href="/">
-            <div class="logo-image">
-                <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                    class="img-fluid">
-            </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto me-5">
-                <% if(!currentUser) {%>
-                    <a class="nav-link me-2 text-light hide-navigation-item" href="#about_us_section">About Us</a>
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Internships
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item text-muted" href="#">Work From Home</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Bangalore</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Delhi</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Hyderabad</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Mumbai</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Chennai</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Pune</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Kolkata</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Internship in Jaipur</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">International Internship</a></li>
-                            <li><a class="dropdown-item text-dark" href="/internships">View all Internships</a></li>
-                        </ul>
+    <% const State=["Karnataka", "Delhi" , "Andhra Pradesh" , "Maharashtra" , "Tamil Nadu" , "Maharashtra"
+        , "West Bengal" , "Rajasthan" ] %>
+        <% const City=["Bangalore", "North Delhi" , "Hyderabad" , "Mumbai" , "Chennai" , "Pune" , "Kolkata" , "Jaipur" ]
+            %>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">JobShala</a>
+                <a class="navbar-brand" href="/">
+                    <div class="logo-image">
+                        <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                            class="img-fluid">
                     </div>
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Jobs
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item text-muted" href="#">Work From Home</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Bangalore</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Delhi</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Hyderabad</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Mumbai</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Chennai</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Pune</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Kolkata</a></li>
-                            <li><a class="dropdown-item text-muted" href="#">Jobs in Jaipur</a></li>
-                            <li><a class="dropdown-item text-dark" href="/jobs">View all Jobs </a></li>
-                        </ul>
-                    </div>
-                    <% } else{ %>
-                        <!-- <div class="mt-1"> -->
-                        <a class="nav-link me-2 text-light mt-2 hide-navigation-item" href="#about_us_section">About
-                            Us</a>
-                        <div class="dropdown">
-                            <a class="nav-link dropdown-toggle text-light mt-2" href="#" id="dropdownMenuLink"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Internships
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item text-muted" href="#">Work From Home</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Bangalore</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Delhi</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Hyderabad</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Mumbai</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Chennai</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Pune</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Kolkata</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Internship in Jaipur</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">International Internship</a></li>
-                                <li><a class="dropdown-item text-dark" href="/internships">View all Internships</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <a class="nav-link dropdown-toggle text-light mt-2" href="#" id="dropdownMenuLink"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Jobs
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item text-muted" href="#">Work From Home</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Bangalore</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Delhi</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Hyderabad</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Mumbai</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Chennai</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Pune</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Kolkata</a></li>
-                                <li><a class="dropdown-item text-muted" href="#">Jobs in Jaipur</a>
-                                </li>
-                                <li><a class="dropdown-item text-dark" href="/jobs">View all Jobs </a></li>
-                            </ul>
-                        </div>
-                        <!--</div> -->
-                        <% } %>
-                            <div class="dropdown me-5">
-                                <% if(!currentUser){ %>
-                                    <a class="nav-link dropdown-toggle text-light" href="#" id="dropdownMenuLink"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Login/Register
-                                    </a>
-                                    <% } else{ %>
-                                        <a class="nav-link dropdown-toggle text-light mt-2" href="#"
-                                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
-                                                class="logo-image2">
-                                        </a>
-                                        <% } %>
-                                            <% if(!currentUser){ %>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <li><a class="dropdown-item text-muted"
-                                                            href="/registerstudent">Register as
-                                                            Student</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item text-muted"
-                                                            href="/registeremployer">Register as
-                                                            Employer</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item text-muted" href="/login">Login</a></li>
-                                                </ul>
-                                                <% } else {%>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <li class="dropdown-item text-muted fas fa-id-badge">
-                                                            <span class="ms-2 text-dark">
-                                                                <%=currentUser.FirstName%>
-                                                                    <%=currentUser.LastName%>
-                                                                        <hr>
-                                                            </span>
-                                                        </li>
-                                                        <% if(currentUser.role==="Student" ){ %>
-                                                            <li><a class="dropdown-item text-muted fas fa-chalkboard mb-2"
-                                                                    href="/studentdashboard" aria-hidden="false"><span
-                                                                        class="ms-2">Dashboard</span></a></li>
-                                                            <% }else {%>
-                                                                <li><a class="dropdown-item text-muted fas fa-chalkboard mb-2"
-                                                                        href="/employerdashboard"><span
-                                                                            class="ms-2">Dashboard</span> </a></li>
-                                                                <li><a class="dropdown-item text-muted fas fa-camera-retro mb-2"
-                                                                        href="#">
-                                                                        <span class="ms-2">
-                                                                            <%= currentUser.role %> Profile
-                                                                        </span></a></li>
-                                                                <% } %>
-                                                                    <li><a class="dropdown-item text-muted fas fa-power-off mb-2"
-                                                                            href="/logout"><span class="ms-2">
-                                                                                Logout</span></a></li>
-                                                    </ul>
-                                                    <% } %>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto me-5">
+                        <% if(!currentUser) {%>
+                            <a class="nav-link me-2 text-light hide-navigation-item" href="#about_us_section">About
+                                Us</a>
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Internships
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <% for(let i=0; i < State.length; i++){%>
+                                        <form action="/jobs" method="get" id='myForm1'>
+                                            <input type="text" hidden class="form-control" name="State" id="State"
+                                                value="<%=State[i]%>">
+                                            <input type="text" hidden class="form-control" name="Location" id="City"
+                                                value="<%=City[i]%>">
+                                            <button type="submit"
+                                                class="dropdown-item text-muted link-button">Internships in
+                                                <%=City[i]%>
+                                            </button>
+                                        </form>
+                                        <%}%>
+                                            <li><a class="dropdown-item text-dark" href="/internships">View all
+                                                    Internships</a>
+                                            </li>
+                                </ul>
                             </div>
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle text-light" href="#" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Jobs
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <% for(let i=0; i < State.length; i++){%>
+                                        <form action="/jobs" method="get" id='myForm1'>
+                                            <input type="text" hidden class="form-control" name="State" id="State"
+                                                value="<%= State[i] %>">
+                                            <input type="text" hidden class="form-control" name="Location" id="City"
+                                                value="<%= City[i] %>">
+                                            <button type="submit" class="dropdown-item text-muted link-button">Jobs in
+                                                <%=City[i]%>
+                                            </button>
+                                        </form>
+                                        <%}%>
+                                            <li><a class="dropdown-item text-dark" href="/jobs">View all Jobs </a></li>
+                                </ul>
+                            </div>
+                            <% } else{ %>
+                                <!-- <div class="mt-1"> -->
+                                <a class="nav-link me-2 text-light mt-2 hide-navigation-item"
+                                    href="#about_us_section">About
+                                    Us</a>
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle text-light mt-2" href="#" id="dropdownMenuLink"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Internships
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <% for(let i=0; i < State.length; i++){%>
+                                            <form action="/jobs" method="get" id='myForm1'>
+                                                <input type="text" hidden class="form-control" name="State" id="State"
+                                                    value="<%=State[i]%>">
+                                                <input type="text" hidden class="form-control" name="Location" id="City"
+                                                    value="<%=City[i]%>">
+                                                <button type="submit"
+                                                    class="dropdown-item text-muted link-button">Internships
+                                                    in
+                                                    <%=City[i]%>
+                                                </button>
+                                            </form>
+                                            <%}%>
+                                                <li><a class="dropdown-item text-dark" href="/internships">View all
+                                                        Internships</a>
+                                                </li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle text-light mt-2" href="#" id="dropdownMenuLink"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Jobs
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <% for(let i=0; i < State.length; i++){%>
+                                            <form action="/jobs" method="get" id='myForm1'>
+                                                <input type="text" hidden class="form-control" name="State" id="State"
+                                                    value="<%= State[i] %>">
+                                                <input type="text" hidden class="form-control" name="Location" id="City"
+                                                    value="<%= City[i] %>">
+                                                <button type="submit" class="dropdown-item text-muted link-button">Jobs
+                                                    in
+                                                    <%=City[i]%>
+                                                </button>
+                                            </form>
+                                            <%}%>
+                                                <li><a class="dropdown-item text-dark" href="/jobs">View all Jobs </a>
+                                                </li>
+                                    </ul>
+                                </div>
+                                <!--</div> -->
+                                <% } %>
+                                    <div class="dropdown me-5">
+                                        <% if(!currentUser){ %>
+                                            <a class="nav-link dropdown-toggle text-light" href="#"
+                                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Login/Register
+                                            </a>
+                                            <% } else{ %>
+                                                <a class="nav-link dropdown-toggle text-light mt-2" href="#"
+                                                    id="dropdownMenuLink" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                                    <img src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
+                                                        class="logo-image2">
+                                                </a>
+                                                <% } %>
+                                                    <% if(!currentUser){ %>
+                                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <li><a class="dropdown-item text-muted"
+                                                                    href="/registerstudent">Register as
+                                                                    Student</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item text-muted"
+                                                                    href="/registeremployer">Register as
+                                                                    Employer</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item text-muted"
+                                                                    href="/login">Login</a></li>
+                                                        </ul>
+                                                        <% } else {%>
+                                                            <ul class="dropdown-menu"
+                                                                aria-labelledby="dropdownMenuLink">
+                                                                <li class="dropdown-item text-muted fas fa-id-badge">
+                                                                    <span class="ms-2 text-dark">
+                                                                        <%=currentUser.FirstName%>
+                                                                            <%=currentUser.LastName%>
+                                                                                <hr>
+                                                                    </span>
+                                                                </li>
+                                                                <% if(currentUser.role==="Student" ){ %>
+                                                                    <li><a class="dropdown-item text-muted fas fa-chalkboard mb-2"
+                                                                            href="/studentdashboard"
+                                                                            aria-hidden="false"><span
+                                                                                class="ms-2">Dashboard</span></a></li>
+                                                                    <li><a class="dropdown-item text-muted fas fa-camera-retro mb-2"
+                                                                            href="#">
+                                                                            <span class="ms-2">
+                                                                                <%= currentUser.role %> Profile
+                                                                            </span></a></li>
+                                                                    <% }else {%>
+                                                                        <li><a class="dropdown-item text-muted fas fa-chalkboard mb-2"
+                                                                                href="/employerdashboard"><span
+                                                                                    class="ms-2">Dashboard</span> </a>
+                                                                        </li>
+                                                                        <% } %>
+                                                                            <li><a class="dropdown-item text-muted fas fa-power-off mb-2"
+                                                                                    href="/logout"><span class="ms-2">
+                                                                                        Logout</span></a></li>
+                                                            </ul>
+                                                            <% } %>
+                                    </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 </nav>
