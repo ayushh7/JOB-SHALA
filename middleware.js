@@ -1,4 +1,5 @@
 const Job = require('./db/Job');
+const User = require('./db/User');
 const Internship = require('./db/Internship');
 const ExpressError = require('./utils/ExpressError');
 const {jobSchema, internshipSchema} = require('./schemas.js')
@@ -39,6 +40,14 @@ module.exports.isInternshipOwner = async(req,res,next)=>{
     if(!internship.Employer.equals(req.user._id)){
         req.flash('error','You do not have permission to do that');
         return res.redirect(`/internships/${id}`);
+    }
+    next();
+}
+
+module.exports.isEmployer = async(req,res,next)=>{
+    if(req.user.role !== "Employer"){
+        req.flash('error','Only Employers are allowed to post jobs/internships');
+        return res.redirect('/');
     }
     next();
 }
