@@ -5,7 +5,6 @@ const Job = require('./Job');
 const Internship = require('./Internship');
 
 
-
 const userSchema = new mongoose.Schema({
 
     FirstName: {
@@ -53,6 +52,9 @@ const userSchema = new mongoose.Schema({
             ref : 'Internship'
         }
     ],
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
+
 
     Linkedin : {
         type : String,
