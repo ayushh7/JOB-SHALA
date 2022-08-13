@@ -1,5 +1,6 @@
 const express=require('express');
 const router=express.Router();
+const catchAsync = require('../utils/catchAsync');
 const {isLoggedIn} = require('../middleware')
 const User = require('../db/User.js');
 

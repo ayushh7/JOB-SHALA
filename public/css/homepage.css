@@ -356,3 +356,10 @@ img.w-100 {
     margin-top: -4rem;
   }
 }
+
+.link-button {
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
