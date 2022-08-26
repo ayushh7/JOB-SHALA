@@ -1,68 +1,66 @@
 <% layout('layouts/boilerplate') %>
+    <script src="/js/city.js"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/internships.css">
-    <h2 class="mb-4 mt-5" id="internship">Internship Opportunities </h2>
+    <link rel="stylesheet" href="css/jobs.css">
+    <h2 class="mt-5 mb-4" id="jobs">Internship Opportunities</h2>
     <div class="row">
         <div class="col-2 hide"></div>
         <div class="col-3 hide">
             <div class="card stick">
                 <div class="card-body">
                     <h5 class="card-title mb-3 text-center">Filter</h5>
-                    <form action="">
+                    <form action="/internships" method="get" id='myForm1'>
+                        <div class="form-label">Location</div>
+
+                        <div class="form-group col-lg-offset-4 flex-column d-flex filterbox">
+
+                            <select onchange="print_city('state', this.selectedIndex);" id="sts" name="State"
+                                class="form-control" required></select>
+                        </div>
+                            <div class="form-group col-lg-offset-4 flex-column d-flex filterbox">
+
+                            <select name="Location" id="state" class="form-control" required></select>
+                            <script language="javascript">print_state("sts");</script>
+                        </div>
+
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Location</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="e.g. Marketing">
+                            <input type="text" hidden class="form-control" id="City" value="<%= query.Location %>">
+                            <input type="text" hidden name="title" value="<%= query.title %>">
+                            <input hidden name="mi" value="<%= query.mi %>">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Category</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="e.g. Delhi">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Company Name</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="e.g. Amazon">
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Work From Home
-                            </label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Fresher Internships
-                            </label>
-                        </div>
-                        <div class="form-check mb-4">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Include All Internships
-                            </label>
-                        </div>
-                        <label for="customRange2" class="form-label">Desired minimum monthly stipend (₹)</label>
-                        <input type="range" class="form-range" min="0" max="5" id="customRange2">
-                        <div class="price ms-2 mb-3">
-                            <span>0</span>
-                            <span>2K</span>
-                            <span>4K</span>
-                            <span>6K</span>
-                            <span>8K</span>
-                            <span>10K</span>
-                        </div>
-                        <div class="button_container2">
-                            <a href="" class="color">
-                                Clear All
-                            </a>
-                        </div>
+                        <button type="submit" class="custom btn btn-outline-info">Apply</button>
                     </form>
+
+                    <form action="/internships" method="get" id='myForm2'>
+                        <div class="mb-3">
+
+                            <label for="customRange2" class="text-center form-label">Company Name</label>
+                            <input type="text" name="title" class="form-control" id="Company" value="<%= query.title %>"
+                                placeholder="e.g. Amazon">
+                            <input type="text" hidden name="Location" value="<%= query.Location %>">
+                            <input hidden name="mi" value="<%= query.mi %>">
+                        </div>
+                        <button type="submit" class="custom btn btn-outline-info">Apply</button>
+                    </form>
+                    <form action="/internships" method="get" id='myForm2'>
+                        <label for="customRange2" class="text-center form-label">Desired minimum monthly stipend (₹)</label>
+                        <input name='mi' type="range" id="myRange" class="form-range" min="0" max="100000"
+                            id="customRange2" step=1000 value='<%= query.mi %>'>
+                        <div id="demo">
+                        </div>
+                        <input type="text" hidden name="title" class="form-control" id="Company"
+                            value="<%= query.title %>" placeholder="e.g. Amazon">
+                        <input type="text" hidden name="Location" value="<%= query.Location %>">
+                        <button type="submit" class="custom btn btn-outline-info">Apply</button>
+                    </form>
+
                 </div>
             </div>
         </div>
+
         <div class="col-5" id="show">
-            <% for (var i=0 ;i<internships.length ;i++) {%>
+            <% for (var i=(page-1)*4;i < Math.min(page*4,internships.length);i++) {%>
 
                 <div class="card mb-4">
                     <div class="card-body">
@@ -71,15 +69,11 @@
                                 <%=internships[i].Name%>
                             </h5>
                             <!-- <div class="logo-image2 d-inline">
-                                 <img src="https://internshala.com/cached_uploads/logo%2F5e2fde967dbde1580195478.jpeg"
-                                        class="img-fluid ">
+
                             </div> -->
-                            <% if(currentUser && internships[i].Employer &&
-                                internships[i].Employer.equals(currentUser._id)){ %>
-                                <form class="d-inline" action="/internships/<%=internships[i]._id%>?_method=DELETE"
-                                    method="POST">
-                                    <a class="card-link btn btn-info me-3"
-                                        href="/internships/<%=internships[i]._id%>/edit">Edit</a>
+                            <% if(currentUser && internships[i].Employer && internships[i].Employer.equals(currentUser._id)){ %>
+                                <form class="d-inline" action="/internships/<%=internships[i]._id%>?_method=DELETE" method="POST">
+                                    <a class="card-link btn btn-info me-3" href="/internships/<%=internships[i]._id%>/edit">Edit</a>
                                     <button class="btn btn-danger">
                                         DELETE
                                     </button>
@@ -98,7 +92,7 @@
                             <div class="location text-muted mb-1">
                                 <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start
                                     Date</span>
-                                <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> Stipend</span>
+                                <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> CTC</span>
                                 <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply
                                     By</span>
                             </div>
@@ -107,15 +101,15 @@
                                     <%=internships[i].Startdate%>
                                 </span>
                                 <span class="ms-2 me-5">
-                                    <%=internships[i].Stipend%>
+                                    <%=internships[i].CTC%>
                                 </span>
                                 <span class="ms-3 me-5">
                                     <%=internships[i].Lastdate%>
                                 </span>
                             </div>
                         </div>
-                        <div class="button_container">
-                            <button class="pill text-muted">Internship Category</button>
+                        <div class="button_container mt-4">
+                            <button class="pill text-muted">Job Category</button>
                             <a href="/internships/<%=internships[i]._id%>" class="color">
                                 View details<i class="material-icons icon">&#xe5cc;</i>
                             </a>
@@ -123,224 +117,56 @@
                     </div>
                 </div>
 
-
+                
                 <% } %>
-                    <!-- <div class="col-5" id="show">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="button_container">
-                        <h5 class="card-title mb-3 d-inline">Senior Recruiter</h5>
-                        <div class="logo-image2 d-inline">
-                            <img src="https://internshala.com/cached_uploads/logo%2F5e2fde967dbde1580195478.jpeg"
-                                class="img-fluid ">
-                        </div>
-                    </div>
-                    <h6 class="card-subtitle mb-4 text-muted">Gastrotalk</h6>
-                    <div class="card-text mb-3">
-                        <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i> Gurugram</div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="location text-muted mb-1">
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start Date</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe742;</i> Duration</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> Stipend</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply By</span>
-                        </div>
-                        <div class="text-dark">
-                            <span class="ms-1 me-5">Immediately</span>
-                            <span class="ms-2 me-5">2 months</span>
-                            <span class="ms-3 me-5">45k/month</span>
-                            <span class="ms-4 me-5">15 Jul' 22</span>
-                        </div>
-                    </div>
-                    <div class="button_container">
-                        <button class="pill text-muted">Freshers Internship</button>
-                        <a href="" class="color">
-                            View details<i class="material-icons icon">&#xe5cc;</i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="button_container">
-                        <h5 class="card-title mb-3 d-inline">Business Partner Manager - Sales</h5>
-                        <div class="logo-image2 d-inline">
-                            <img src="https://internshala.com/cached_uploads/logo%2F619a0b3de12ae1637485373.png"
-                                class="img-fluid ">
-                        </div>
-                    </div>
-                    <h6 class="card-subtitle mb-4 text-muted">Friends With Dreams Private Limited</h6>
-                    <div class="card-text mb-3">
-                        <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i> Delhi</div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="location text-muted mb-1">
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start Date</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe742;</i> Duration</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> Stipend</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply By</span>
-                        </div>
-                        <div class="text-dark">
-                            <span class="ms-1 me-5">Immediately</span>
-                            <span class="ms-2 me-5">2 months</span>
-                            <span class="ms-3 me-5">30k/month</span>
-                            <span class="ms-4 me-5">12 Jul' 22</span>
-                        </div>
-                    </div>
-                    <div class="button_container">
-                        <button class="pill text-muted">Freshers Internship</button>
-                        <a href="" class="color">
-                            View details<i class="material-icons icon">&#xe5cc;</i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="button_container">
-                        <h5 class="card-title mb-3 d-inline">Back Office Executive</h5>
-                        <div class="logo-image2 d-inline">
-                            <img src="https://internshala.com/cached_uploads/logo%2F621f672fd138b1646225199.jpg"
-                                class="img-fluid ">
-                        </div>
-                    </div>
-                    <h6 class="card-subtitle mb-4 text-muted">Comienzo Institute Of Professional Opc Private Limited
-                    </h6>
-                    <div class="card-text mb-3">
-                        <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i> Kolkata</div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="location text-muted mb-1">
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start Date</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe742;</i> Duration</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> Stipend</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply By</span>
-                        </div>
-                        <div class="text-dark">
-                            <span class="ms-1 me-5">Immediately</span>
-                            <span class="ms-2 me-5">2 months</span>
-                            <span class="ms-3 me-5">80k/month</span>
-                            <span class="ms-4 me-5">15 Jul' 22</span>
-                        </div>
-                    </div>
-                    <div class="button_container">
-                        <button class="pill text-muted">Freshers Internship</button>
-                        <a href="" class="color">
-                            View details<i class="material-icons icon">&#xe5cc;</i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="button_container">
-                        <h5 class="card-title mb-3 d-inline">Angular.js Developer</h5>
-                        <div class="logo-image2 d-inline">
-                            <img src="" class="img-fluid ">
-                        </div>
-                    </div>
-                    <h6 class="card-subtitle mb-4 text-muted">Benepik</h6>
-                    <div class="card-text mb-3">
-                        <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i> Gurgaon</div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="location text-muted mb-1">
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start Date</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe742;</i> Duration</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> Stipend</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply By</span>
-                        </div>
-                        <div class="text-dark">
-                            <span class="ms-1 me-5">Immediately</span>
-                            <span class="ms-2 me-5">2 months</span>
-                            <span class="ms-3 me-5">65k/month</span>
-                            <span class="ms-4 me-5">12 Jul' 22</span>
-                        </div>
-                    </div>
-                    <div class="button_container">
-                        <button class="pill text-muted">Freshers Internship</button>
-                        <a href="" class="color">
-                            View details<i class="material-icons icon">&#xe5cc;</i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="button_container">
-                        <h5 class="card-title mb-3 d-inline">Business Development Executive</h5>
-                        <div class="logo-image2 d-inline">
-                            <img src="" class="img-fluid ">
-                        </div>
-                    </div>
-                    <h6 class="card-subtitle mb-4 text-muted">ConvertCart</h6>
-                    <div class="card-text mb-3">
-                        <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i> Work From Home
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="location text-muted mb-1">
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start Date</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe742;</i> Duration</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> Stipend</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply By</span>
-                        </div>
-                        <div class="text-dark">
-                            <span class="ms-1 me-5">Immediately</span>
-                            <span class="ms-2 me-5">2 months</span>
-                            <span class="ms-3 me-5">55k/month</span>
-                            <span class="ms-4 me-5">15 Jul' 22</span>
-                        </div>
-                    </div>
-                    <div class="button_container">
-                        <button class="pill text-muted">Freshers Internship</button>
-                        <a href="" class="color">
-                            View details<i class="material-icons icon">&#xe5cc;</i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="button_container">
-                        <h5 class="card-title mb-3 d-inline">React Native Developer</h5>
-                        <div class="logo-image2 d-inline">
-                            <img src="https://internshala.com/cached_uploads/logo%2F5e2fdf149e4911580195604.png"
-                                class="img-fluid ">
-                        </div>
-                    </div>
-                    <h6 class="card-subtitle mb-4 text-muted">KoiReader Technologies</h6>
-                    <div class="card-text mb-3">
-                        <div class="location"><i class="material-icons text-muted icon">&#xe55f;</i>
-                            Chennai, Delhi, Kolkata, Bangalore</div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="location text-muted mb-1">
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe039;</i> Start Date</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe742;</i> Duration</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88f;</i> Stipend</span>
-                            <span class="me-5"><i class="material-icons text-muted icon">&#xe88b;</i> Apply By</span>
-                        </div>
-                        <div class="text-dark">
-                            <span class="ms-1 me-5">Immediately</span>
-                            <span class="ms-2 me-5">2 months</span>
-                            <span class="ms-3 me-5">40k/month</span>
-                            <span class="ms-4 me-5">12 Jul' 22</span>
-                        </div>
-                    </div>
-                    <div class="button_container">
-                        <button class="pill text-muted">Freshers Internship</button>
-                        <a href="" class="color">
-                            View details<i class="material-icons icon">&#xe5cc;</i>
-                        </a>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-7 hide">
 
+        </div>
+
+        <div class="text-xs-center">
+            <div class="pagination">
+                <form action="/jobs" method="get" class="form-products">
+                    <% if(page> 1) { %>
+
+                        <label class="b btn mx - 2" for="prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="btn--icon" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M20 19l-7-7 7-7" />
+                            </svg> 
+                        </label>
+                        <input id="prev" hidden type="submit" name="page" value="<%= page-1 %>" />
+                        <input hidden name="mi" value="<%= query.mi%>" />
+                        <input hidden name="title" value="<%= query.title%>" />
+                        <input hidden name="CompanyName" value="<%= query.CompanyName %>" />
+                        <% } %>
+                </form>
+
+                <div class="pages">
+                    <a class="page active">
+                        <%= page %>
+                    </a 
+                </div>
+                    <form action="/jobs" method="get" class="form-products">
+                        <% if(page < mxLength/4) { %>
+
+                            <label class="b-btn mx - 2" for="next">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="btn--icon" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 5l7 7-7 7-7" />
+                                </svg>
+                            </label>
+
+                            <input hidden type="submit" name="page" value="<%= page+1 %>" />
+                            <input id="next" hidden type="submit" name="page" value="<%= page+1 %>" />
+                            <input hidden name="mi" value="<%= query.mi%>" />
+                            <input hidden name="title" value="<%= query.title%>" />
+                            <input hidden name="CompanyName" value="<%= query.CompanyName %>" />
+                            <% } %>
+                    </form>
+            </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="js/internships.js"></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="/js/jobs.js"></script>
+        <script src="/js/Slider.js"></script>
