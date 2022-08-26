@@ -12,7 +12,6 @@
                     <% const Image2=["/icons/sde.png", "/icons/dataanalyst.png" , "/icons/manager.png"
                         , "/icons/backend.png" , "/icons/frontend.png" , "/icons/graphicdesigner.png"
                         , "/icons/digitalmarketing.png" , "/icons/machinelearning.png" ] %>
-                        <a id="home_page_section"></a>
                         <div class="image-slide" id="image-slide">
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
@@ -64,20 +63,22 @@
                                 <%for(let i=0; i < State.length; i++){%>
                                     <div class="col-lg-1 col-sm-3 col-6">
                                         <form action="/jobs" method="get" id='myForm1'>
-                                            <div class="card h-100 text-center">
-                                                <img src="<%=Image[i]%>" class="card-img-top" alt="..." />
-                                                <div class="card-body">
-                                                    <h5 class="card-text">
-                                                        <input type="text" hidden class="form-control" name="State"
-                                                            id="State" value="<%=State[i]%>">
-                                                        <input type="text" hidden class="form-control" name="Location"
-                                                            id="City" value="<%=City[i]%>">
-                                                        <button type="submit" class="link-button">
-                                                            <%=City[i]%>
-                                                        </button>
-                                                    </h5>
+                                            <button type="submit" class="link-button">
+                                                <div class="card h-100 text-center">
+                                                    <img src="<%=Image[i]%>" class="card-img-top" alt="..." />
+                                                    <div class="card-body">
+                                                        <h5 class="card-text">
+                                                            <input type="text" hidden class="form-control" name="State"
+                                                                id="State" value="<%=State[i]%>">
+                                                            <input type="text" hidden class="form-control"
+                                                                name="Location" id="City" value="<%=City[i]%>">
+                                                            <div>
+                                                                <%=City[i]%>
+                                                            </div>
+                                                        </h5>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </button>
                                         </form>
                                     </div>
                                     <%}%>
@@ -87,18 +88,20 @@
                                 <%for(let i=0; i < State.length; i++){%>
                                     <div class="col-lg-1 col-sm-3 col-6">
                                         <form action="/jobs" method="get" id='myForm1'>
-                                            <div class="card h-100 text-center">
-                                                <img src="<%=Image2[i]%>" class="card-img-top" alt="..." />
-                                                <div class="card-body">
-                                                    <h5 class="card-text">
-                                                        <input type="text" hidden class="form-control" name="title"
-                                                            id="Role" value="<%=Roles[i]%>">
-                                                        <button type="submit" class="link-button">
-                                                            <%=Roles[i]%>
-                                                        </button>
-                                                    </h5>
+                                            <button type="submit" class="link-button">
+                                                <div class="card h-100 text-center">
+                                                    <img src="<%=Image2[i]%>" class="card-img-top" alt="..." />
+                                                    <div class="card-body">
+                                                        <h5 class="card-text">
+                                                            <input type="text" hidden class="form-control" name="title"
+                                                                id="Role" value="<%=Roles[i]%>">
+                                                            <div>
+                                                                <%=Roles[i]%>
+                                                            </div>
+                                                        </h5>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </button>
                                         </form>
                                     </div>
                                     <%}%>
@@ -120,20 +123,22 @@
                                 <%for(let i=0; i < State.length; i++){%>
                                     <div class="col-lg-1 col-sm-3 col-6">
                                         <form action="/jobs" method="get" id='myForm1'>
-                                            <div class="card h-100 text-center">
-                                                <img src="<%=Image[i]%>" class="card-img-top" alt="..." />
-                                                <div class="card-body">
-                                                    <h5 class="card-text">
-                                                        <input type="text" hidden class="form-control" name="State"
-                                                            id="State" value="<%=State[i]%>">
-                                                        <input type="text" hidden class="form-control" name="Location"
-                                                            id="City" value="<%=City[i]%>">
-                                                        <button type="submit" class="link-button">
-                                                            <%=City[i]%>
-                                                        </button>
-                                                    </h5>
+                                            <button type="submit" class="link-button">
+                                                <div class="card h-100 text-center">
+                                                    <img src="<%=Image[i]%>" class="card-img-top" alt="..." />
+                                                    <div class="card-body">
+                                                        <h5 class="card-text">
+                                                            <input type="text" hidden class="form-control" name="State"
+                                                                id="State" value="<%=State[i]%>">
+                                                            <input type="text" hidden class="form-control"
+                                                                name="Location" id="City" value="<%=City[i]%>">
+                                                            <div>
+                                                                <%=City[i]%>
+                                                            </div>
+                                                        </h5>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </button>
                                         </form>
                                     </div>
                                     <%}%>
@@ -143,18 +148,20 @@
                                 <%for(let i=0; i < State.length; i++){%>
                                     <div class="col-lg-1 col-sm-3 col-6">
                                         <form action="/jobs" method="get" id='myForm1'>
-                                            <div class="card h-100 text-center">
-                                                <img src="<%=Image2[i]%>" class="card-img-top" alt="..." />
-                                                <div class="card-body">
-                                                    <h5 class="card-text">
-                                                        <input type="text" hidden class="form-control" name="title"
-                                                            id="Role" value="<%=Roles[i]%>">
-                                                        <button type="submit" class="link-button">
-                                                            <%=Roles[i]%>
-                                                        </button>
-                                                    </h5>
+                                            <button type="submit" class="link-button">
+                                                <div class="card h-100 text-center">
+                                                    <img src="<%=Image2[i]%>" class="card-img-top" alt="..." />
+                                                    <div class="card-body">
+                                                        <h5 class="card-text">
+                                                            <input type="text" hidden class="form-control" name="title"
+                                                                id="Role" value="<%=Roles[i]%>">
+                                                            <div>
+                                                                <%=Roles[i]%>
+                                                            </div>
+                                                        </h5>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </button>
                                         </form>
                                     </div>
                                     <%}%>

@@ -17,18 +17,18 @@
 </head>
 
 <body>
-    <form action="/profile/1">
-        <div class="container rounded bg-white mt-5 mb-5 ps-5 pe-5">
-            <div class="d-flex justify-content-between mb-3">
-                <h4 class="heading">Profile Settings</h4>
-            </div>
+    <div class="container rounded bg-white mt-5 mb-5 ps-5 pe-5">
+        <div class="d-flex justify-content-between mb-3">
+            <h4 class="heading">Profile Settings</h4>
+        </div>
+        <form action="/profile/<%=._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-3 border-right">
                     <div class="d-flex flex-column align-items-center text-center"><img class="rounded-circle mt-5"
                             width="150px"
                             src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
-                            class="font-weight-bold">Joe Putin</span><span
-                            class="text-black-50">invadeukr@gmail.com</span></div>
+                            class="font-weight-bold"></span><span class="text-black-50">invadeukr@gmail.com</span>
+                    </div>
                     <br>
                     <div class="col-md-12"><label class="labels">Upload your profile photo</label><input type="file"
                             id="myFile" name="filename"></div>
@@ -120,8 +120,8 @@
             <div class="savebutton">
                 <button class="btn btn-primary" type="submit">Save Profile</button>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 
 <script type="text/javascript" src="/js/profile.js"></script>

@@ -52,6 +52,15 @@ module.exports.isEmployer = async(req,res,next)=>{
     next();
 }
 
+module.exports.isStudent = async(req,res,next)=>{
+    if(req.user.role !== "Student"){
+        req.flash('error','Only Students are allowed to edit their profile');
+        return res.redirect('/');
+    }
+    next();
+}
+
+
 
 module.exports.validateInternship = (req,res,next)=>{
     const {error} = internshipSchema.validate(req.body);
@@ -62,14 +71,4 @@ module.exports.validateInternship = (req,res,next)=>{
     else{
         next();
     }
-}
-
-
-module.exports.studentvalid = (req,res,next) => {
-    if(!req.user.role !== 'student'){
-        req.flash('error','You do not have permission to do that');
-        return res.redirect('/');
-    }
-
-    next();
 }
