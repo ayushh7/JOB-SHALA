@@ -2,15 +2,15 @@ const express=require('express');
 const router=express.Router();
 const {createjob, getAllJobs, showJob, deleteJob, updateJob, renderEditForm, Applyjob} = require('../controller/jobcontroller');
 const catchAsync = require('../utils/catchAsync');
-const {isLoggedIn, validateJob, isJobOwner} = require('../middleware')
+const {isLoggedIn, isEmployer, validateJob, isJobOwner} = require('../middleware')
 const Job = require('../db/Job.js');
 
 
 router.route('/')
 .get(catchAsync(getAllJobs))
-.post(isLoggedIn,validateJob,catchAsync(createjob));
+.post(isLoggedIn,isEmployer,validateJob,catchAsync(createjob));
 
-router.route('/new').get(isLoggedIn,(req, res) => {
+router.route('/new').get(isLoggedIn,isEmployer,(req, res) => {
     res.render('jobs/jobform');
 })
 

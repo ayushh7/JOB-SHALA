@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const catchAsync = require('../utils/catchAsync');
-const {isLoggedIn,studentvalid} = require('../middleware')
+const {isLoggedIn} = require('../middleware')
 const User = require('../db/User.js');
 
 router.get('/employerdashboard', isLoggedIn, (req, res) => {

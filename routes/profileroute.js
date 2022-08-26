@@ -1,9 +1,10 @@
 const express=require('express');
 const router=express.Router();
-const {isLoggedIn} = require('../middleware')
+const catchAsync = require('../utils/catchAsync');
+const {isLoggedIn, isStudent} = require('../middleware')
 const User = require('../db/User.js');
 
-router.get('/:id', isLoggedIn, (req, res) => {
+router.get('/:id', isLoggedIn, isStudent, (req, res) => {
     res.render('profile/student');
 })
 

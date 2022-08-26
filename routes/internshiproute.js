@@ -2,7 +2,7 @@ const express=require('express');
 const router=express.Router();
 const {createinternship, showInternship, deleteInternship, updateInternship, renderEditForm,  getAllInternships} = require('../controller/internshipcontroller');
 const catchAsync = require('../utils/catchAsync');
-const {isLoggedIn, validateInternship, isInternshipOwner} = require('../middleware')
+const {isLoggedIn, isEmployer, validateInternship, isInternshipOwner} = require('../middleware')
 const Internship = require('../db/Internship.js');
 
 
@@ -12,9 +12,12 @@ router.route('/')
 .post(isLoggedIn,validateInternship,createinternship);
 
 
-router.route('/new').get(isLoggedIn,(req, res) => {
+
+
+router.route('/new').get(isLoggedIn,isEmployer,(req, res) => {
     res.render('internships/internshipform');
 })
+.post(isLoggedIn,isEmployer,validateInternship,createinternship);
 
 
 router.route('/:id')
