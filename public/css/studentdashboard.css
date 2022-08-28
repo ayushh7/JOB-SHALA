@@ -25,8 +25,8 @@
   --app-content-secondary-color: #a6a0ff;
   --app-content-main-color: #1f1c2e;
   --sidebar-link: #1f1c2e;
-  --sidebar-hover-link: #6C63FF;
-  --sidebar-active-link: #6C63FF;
+  --sidebar-hover-link: #6c63ff;
+  --sidebar-active-link: #6c63ff;
   --sidebar-main-color: #000000;
 }
 
@@ -163,12 +163,10 @@ body {
 }
 
 .sidebar-list-item.active svg {
-  color:#fff;
+  color: #fff;
 }
 
-
 @media screen and (max-width: 520px) {
-  
 }
 
 .products-area-wrapper {
@@ -214,11 +212,8 @@ body {
 }
 
 @media screen and (max-width: 520px) {
-
-
 }
 @media screen and (max-width: 480px) {
-
   .product-cell {
     flex: 0.4;
   }
@@ -252,4 +247,6 @@ body {
 .status.disabled:before {
   background-color: #59719d;
 }
-
+.hide {
+  text-decoration: none;
+}

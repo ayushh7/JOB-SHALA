@@ -20,7 +20,10 @@
   text-align: center;
   color: black;
 }
-
+#internship {
+  text-align: center;
+  color: black;
+}
 .stick {
   position: sticky;
   top: 8rem;
@@ -30,9 +33,9 @@
   position: relative;
   top: 7px;
 }
-.filterbox{
-  margin-top:2px;
-  margin-bottom:2px;
+.filterbox {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .location {
   font-size: 15px;
@@ -93,12 +96,12 @@ input[type="range"]::-webkit-slider-thumb {
 .pagination {
   list-style: none;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   position: relative;
   gap: 16px;
   margin-top: 10rem;
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 }
 
 .pages {
@@ -132,13 +135,13 @@ input[type="range"]::-webkit-slider-thumb {
 .custom {
   background-color: #fff;
   border: 1px solid rgb(112, 42, 198);
-  color:rgb(112, 42, 198);
+  color: rgb(112, 42, 198);
   height: 30px;
-  font-size:14px;
+  font-size: 14px;
   width: 60px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:0.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.6rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -159,7 +162,6 @@ input[type="range"]::-webkit-slider-thumb {
   stroke: #fff;
 }
 
-
 .range {
   display: flex;
   width: 60px;
@@ -175,9 +177,9 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: center;
   border-left: #e6e4e4 1px solid;
 }
-#company{
-  margin-left:auto;
-  margin-right:auto;
+#company {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-group {

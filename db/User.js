@@ -132,7 +132,7 @@ const userSchema = new Schema({
         default : null
     },
 
-    PIN : {
+    Pincode : {
         type : Number,
         default : null
     }

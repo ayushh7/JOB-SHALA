@@ -26,7 +26,7 @@ module.exports.getAllInternships = (async (req, res, next) => {
     
     if (internships.length==0) 
     {
-      res.send('nointernships found');
+      res.render('internships/nointernship');
       return;
     }
 

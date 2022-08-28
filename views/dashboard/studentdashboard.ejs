@@ -18,7 +18,7 @@
                 <div class="app-icon"> Jobshala </div>
             </div>
             <ul class="sidebar-list">
-             
+
                 <li class="sidebar-list-item">
                     <a href="/">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -30,7 +30,7 @@
                         <span>Home</span>
                     </a>
                 </li>
-        
+
                 <li class="sidebar-list-item active">
                     <a href="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -48,7 +48,7 @@
         <div class="app-content">
             <div class="app-content-header">
                 <h1 class="app-content-headerText">Dashboard</h1>
-                <button class="app-content-headerButton">My Profile</button>
+                <a href="/profile/<%=currentUser._id%>/edit" class="app-content-headerButton hide">My Profile</a>
             </div>
             <div class="products-header">
                 <div class="product-cell company">Company</div>
@@ -58,22 +58,28 @@
                 <div class="product-cell status-cell">Status</div>
                 <div class="product-cell review"></div>
             </div>
-                <% for(var i = 0;i < jobApplications.length; i++){ %>
+            <% for(var i=0;i < jobApplications.length; i++){ %>
                 <div class="products-row">
-                    <div class="product-cell company"><span><%= jobApplications[i].Company%></span></div>
-                    <div class="product-cell role"><span class="cell-label"><%= jobApplications[i].Name%></span></div>
+                    <div class="product-cell company"><span>
+                            <%= jobApplications[i].Company%>
+                        </span></div>
+                    <div class="product-cell role"><span class="cell-label">
+                            <%= jobApplications[i].Name%>
+                        </span></div>
                     <div class="product-cell date"><span class="cell-label">11 June' 22</span></div>
-                    <div class="product-cell applicants"><span class="cell-label"><%= jobApplications[i].Applicants.length %> </span></div>
+                    <div class="product-cell applicants"><span class="cell-label">
+                            <%= jobApplications[i].Applicants.length %>
+                        </span></div>
                     <div class="product-cell status-cell">
                         <span class="cell-label"></span>
                         <span class="status disabled">Not Selected</span>
                     </div>
                     <div class="product-cell review"><span class="cell-label">Review Application</span></div>
                 </div>
-                 <% } %>
-                
-            </div>
+                <% } %>
+
         </div>
+    </div>
     </div>
     <footer class="footer bg-dark py-3 mt-auto">
         <div class="container">
