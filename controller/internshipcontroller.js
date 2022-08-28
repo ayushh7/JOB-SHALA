@@ -1,7 +1,41 @@
 const Internship = require('../db/Internship.js');
+const Features = require('../utils/features');
 const express = require('express');
 
 require('dotenv').config();
+
+module.exports.getAllInternships = (async (req, res, next) => {
+    let resultperpage=4;
+    
+    console.log("Query: ", req.query);
+
+    let features=new Features(Internship.find(), req.query)
+    .search()
+    .filter()
+
+    let internships = await features.query;
+
+    let sze=internships.length;
+    
+    let currentPage=Number(req.query.page||1);
+
+    if (!internships) 
+    {
+      return next(new Apperror('internships not found', 404))
+    }
+    
+    if (internships.length==0) 
+    {
+      res.send('nointernships found');
+      return;
+    }
+
+    req.query.mi = Number(req.query.mi||0);
+   
+    res.render('internships/internships',{internships,page: currentPage, mxLength: sze});
+
+  })
+
 
 
 module.exports.createinternship  = async (req,res,next) => {
