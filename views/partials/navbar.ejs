@@ -133,8 +133,14 @@
                                                 <a class="nav-link dropdown-toggle text-light mt-2" href="#"
                                                     id="dropdownMenuLink" data-bs-toggle="dropdown"
                                                     aria-expanded="false">
-                                                    <img src="https://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
-                                                        class="logo-image2">
+                                                    <%if(currentUser.images[currentUser.images.length - 1] !==undefined)
+                                                        {%>
+                                                        <img src="<%=currentUser.images[currentUser.images.length - 1].url%>"
+                                                            class="logo-image2">
+                                                        <%} else {%>
+                                                            <img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"
+                                                                class="logo-image2">
+                                                            <% } %>
                                                 </a>
                                                 <% } %>
                                                     <% if(!currentUser){ %>

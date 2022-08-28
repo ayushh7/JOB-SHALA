@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const { nanoid }=require('nanoid');
 const nodemailer=require('nodemailer');
+const {cloudinary} = require('../cloudinary')
 const transporter=nodemailer.createTransport(
     {
         service: 'gmail',
@@ -183,6 +184,7 @@ const transporter=nodemailer.createTransport(
                 const user = await User.findByIdAndUpdate(id,{...req.body},{new:true});
                 const imgs = req.files.map(f=>({url : f.path, filename : f.filename}));
                 user.images.push(...imgs);
+                console.log(user.images);
                 // const imgs = req.files.map(f=>({url : f.path, filename : f.filename}));
                 // user.images.push(...imgs);
                 await user.save();

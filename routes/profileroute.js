@@ -5,7 +5,8 @@ const {isLoggedIn, isStudent} = require('../middleware')
 const users = require('../controller/auth')
 const User = require('../db/User.js');
 const multer  = require('multer')
-const upload = multer()
+const {storage} = require('../cloudinary')
+const upload = multer({ storage })
 
 router.get('/:id/edit', isLoggedIn, isStudent, catchAsync(users.renderProfilePage));
 router.route('/:id')

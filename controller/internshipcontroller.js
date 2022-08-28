@@ -91,6 +91,7 @@ module.exports.showInternship = async(req,res)=>{
         req.flash('error','Cannot find that internship!');
         return res.redirect('/internships'); //Necessary to redirect
     }
+    
     res.render('internships/internshippage',{internship});
 };
 
