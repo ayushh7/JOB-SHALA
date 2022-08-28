@@ -110,7 +110,7 @@ exports.getAllJobs = (async (req, res, next) => {
     
     if (jobs.length==0) 
     {
-      res.send('nojobs found');
+      res.render('jobs/nojob');
       return;
     }
 

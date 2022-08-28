@@ -2,11 +2,14 @@ const express=require('express');
 const router=express.Router();
 const catchAsync = require('../utils/catchAsync');
 const {isLoggedIn, isStudent} = require('../middleware')
+const users = require('../controller/auth')
 const User = require('../db/User.js');
+const multer  = require('multer')
+const upload = multer()
 
-router.get('/:id', isLoggedIn, isStudent, (req, res) => {
-    res.render('profile/student');
-})
+router.get('/:id/edit', isLoggedIn, isStudent, catchAsync(users.renderProfilePage));
+router.route('/:id')
+.put(isLoggedIn, isStudent, upload.array('image'), catchAsync(users.updateProfile))
 
 
 // router.get('/studentdashboard',isLoggedIn, async (req, res) => {    

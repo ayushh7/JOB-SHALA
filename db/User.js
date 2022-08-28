@@ -3,15 +3,26 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const passport = require('passport');
 const Job = require('./Job');
 const Internship = require('./Internship');
+const Schema = mongoose.Schema;
 
+const imageSchema = new Schema({
+    url : String,
+    filename : String
+})
 
-const userSchema = new mongoose.Schema({
+imageSchema.virtual('thumbnail').get(function(){
+    return this.url.replace('/upload','/upload/w_200');
+})
+
+const userSchema = new Schema({
 
     FirstName: {
         type: String,
         required: true,
         max: 255
     },
+
+    images : [imageSchema],
 
     LastName: {
         type: String,
