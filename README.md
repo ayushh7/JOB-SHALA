@@ -10,6 +10,7 @@ Implemented Register and Login functionality for user with help of passport
 
 ### Apply for Jobs
 Student can apply for jobs.
+
 ### Search and Filter
 Students can search for specific Jobs and Internships according to their preference. 
 ### Post Jobs
