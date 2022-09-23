@@ -5,6 +5,9 @@ is a full stack web development project with the following features :-
 
 ### Register/Login
 Implemented Register and Login functionality for user with help of passport
+
+<img width="1439" alt="Screenshot 2022-09-23 at 8 43 06 PM" src="https://user-images.githubusercontent.com/82565121/192049800-84d2a1e2-06b1-4263-84f7-54eb80f133d5.png">
+
 ### Apply for Jobs
 Student can apply for jobs.
 ### Search and Filter
