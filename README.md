@@ -34,6 +34,8 @@ Employer can post for a job opening.
 ### DashBoard
 Users can review their profile in the dashboard.
 
+<img width="1440" alt="Screenshot 2022-09-24 at 2 11 08 AM" src="https://user-images.githubusercontent.com/82565121/192053230-ab40f6ae-d233-46b3-a91a-bc6bfb8fb04d.png">
+
 
 
 ## Tech Stack
