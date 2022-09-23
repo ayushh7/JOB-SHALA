@@ -39,7 +39,16 @@ Users can review their profile in the dashboard.
 
 
 ## Tech Stack
-HTML, CSS, Javascript, Bootstrap, EJS, NodeJS, Express.js, MongoDB, Passport 
+◦ HTML 
+◦ CSS
+◦ Javascript
+◦ Bootstrap
+◦ EJS
+◦ NodeJS
+◦ Express.js
+◦ MongoDB
+◦ Passport
+◦ NodeMailer
 
 ## Link to GitHub Repo
 https://github.com/vinamra22/JOB-SHALA
