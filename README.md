@@ -27,9 +27,14 @@ Students can search for specific Jobs and Internships according to their prefere
 ### Post Jobs
 Employer can post for a job opening.
 
+<img width="1440" alt="Screenshot 2022-09-24 at 2 01 33 AM" src="https://user-images.githubusercontent.com/82565121/192052005-7abec4d1-f72a-4660-8417-d1e5c298b790.png">
+
+
 
 ### DashBoard
 Users can review their profile in the dashboard.
+
+
 
 ## Tech Stack
 HTML, CSS, Javascript, Bootstrap, EJS, NodeJS, Express.js, MongoDB, Passport 
