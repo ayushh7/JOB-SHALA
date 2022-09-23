@@ -11,6 +11,9 @@ Implemented Register and Login functionality for user with help of passport
 ### Apply for Jobs
 Student can apply for jobs.
 
+<img width="1437" alt="Screenshot 2022-09-24 at 1 56 15 AM" src="https://user-images.githubusercontent.com/82565121/192051286-9ea97d2b-379c-45e8-be45-7ad46bcc890f.png">
+
+
 ### Search and Filter
 Students can search for specific Jobs and Internships according to their preference. 
 ### Post Jobs
